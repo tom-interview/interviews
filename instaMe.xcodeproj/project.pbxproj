@@ -1,0 +1,747 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		997B21DBA15D54BE70B9F312 /* libPods-instaMeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE664CA0F7E8C3905C41A9C /* libPods-instaMeUITests.a */; };
+		A32297D073E2CE766C9CACB5 /* libPods-instaMe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49660B6ECCFB5AEAF371D73F /* libPods-instaMe.a */; };
+		C6F72C5625E250F72DF7C6D5 /* libPods-instaMeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B8ACAF745FBDDB9521147D /* libPods-instaMeTests.a */; };
+		E2FB0F221DDE10E50046E2F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F211DDE10E50046E2F2 /* main.m */; };
+		E2FB0F251DDE10E50046E2F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F241DDE10E50046E2F2 /* AppDelegate.m */; };
+		E2FB0F281DDE10E50046E2F2 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F271DDE10E50046E2F2 /* SplashViewController.m */; };
+		E2FB0F2B1DDE10E50046E2F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F291DDE10E50046E2F2 /* Main.storyboard */; };
+		E2FB0F2D1DDE10E50046E2F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F2C1DDE10E50046E2F2 /* Assets.xcassets */; };
+		E2FB0F301DDE10E50046E2F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F2E1DDE10E50046E2F2 /* LaunchScreen.storyboard */; };
+		E2FB0F3B1DDE10E50046E2F2 /* instaMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F3A1DDE10E50046E2F2 /* instaMeTests.m */; };
+		E2FB0F461DDE10E50046E2F2 /* instaMeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F451DDE10E50046E2F2 /* instaMeUITests.m */; };
+		E2FB0F551DDE151B0046E2F2 /* ImageCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F541DDE151B0046E2F2 /* ImageCollectionController.m */; };
+		E2FB0F5A1DDE332F0046E2F2 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F591DDE332F0046E2F2 /* AuthViewController.m */; };
+		E2FB0F5D1DDE3B770046E2F2 /* Transceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F5C1DDE3B770046E2F2 /* Transceiver.m */; };
+		E2FB0F601DDE52680046E2F2 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F5F1DDE52680046E2F2 /* Model.m */; };
+		E2FB0F651DDE85490046E2F2 /* ImageDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F641DDE85490046E2F2 /* ImageDetailController.m */; };
+		E2FB0F681DDE85C00046E2F2 /* ImagePresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F671DDE85C00046E2F2 /* ImagePresentation.m */; };
+		E2FB0F6A1DDE910E0046E2F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2FB0F691DDE910E0046E2F2 /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E2FB0F371DDE10E50046E2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2FB0F151DDE10E50046E2F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2FB0F1C1DDE10E50046E2F2;
+			remoteInfo = instaMe;
+		};
+		E2FB0F421DDE10E50046E2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2FB0F151DDE10E50046E2F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2FB0F1C1DDE10E50046E2F2;
+			remoteInfo = instaMe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		35B8ACAF745FBDDB9521147D /* libPods-instaMeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instaMeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FF4BD5980F2CB21BE6216C2 /* Pods-instaMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instaMeUITests/Pods-instaMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		49660B6ECCFB5AEAF371D73F /* libPods-instaMe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instaMe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50E998CC7E3D38FE49E8E303 /* Pods-instaMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-instaMe/Pods-instaMe.release.xcconfig"; sourceTree = "<group>"; };
+		A0D15E4C1C6A769CDDFC1EBA /* Pods-instaMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instaMe/Pods-instaMe.debug.xcconfig"; sourceTree = "<group>"; };
+		ACE664CA0F7E8C3905C41A9C /* libPods-instaMeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instaMeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C02FBD95F9A5B109B0AD6539 /* Pods-instaMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instaMeTests/Pods-instaMeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E0FF5A4350E6BF362D378913 /* Pods-instaMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-instaMeTests/Pods-instaMeTests.release.xcconfig"; sourceTree = "<group>"; };
+		E2FB0F1D1DDE10E50046E2F2 /* instaMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instaMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2FB0F211DDE10E50046E2F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E2FB0F231DDE10E50046E2F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E2FB0F241DDE10E50046E2F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E2FB0F261DDE10E50046E2F2 /* SplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		E2FB0F271DDE10E50046E2F2 /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		E2FB0F2A1DDE10E50046E2F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E2FB0F2C1DDE10E50046E2F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2FB0F2F1DDE10E50046E2F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E2FB0F311DDE10E50046E2F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2FB0F361DDE10E50046E2F2 /* instaMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instaMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2FB0F3A1DDE10E50046E2F2 /* instaMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = instaMeTests.m; sourceTree = "<group>"; };
+		E2FB0F3C1DDE10E50046E2F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2FB0F411DDE10E50046E2F2 /* instaMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instaMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2FB0F451DDE10E50046E2F2 /* instaMeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = instaMeUITests.m; sourceTree = "<group>"; };
+		E2FB0F471DDE10E50046E2F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2FB0F531DDE151B0046E2F2 /* ImageCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionController.h; sourceTree = "<group>"; };
+		E2FB0F541DDE151B0046E2F2 /* ImageCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionController.m; sourceTree = "<group>"; };
+		E2FB0F581DDE332F0046E2F2 /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
+		E2FB0F591DDE332F0046E2F2 /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
+		E2FB0F5B1DDE3B770046E2F2 /* Transceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transceiver.h; sourceTree = "<group>"; };
+		E2FB0F5C1DDE3B770046E2F2 /* Transceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transceiver.m; sourceTree = "<group>"; };
+		E2FB0F5E1DDE52680046E2F2 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		E2FB0F5F1DDE52680046E2F2 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		E2FB0F631DDE85490046E2F2 /* ImageDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDetailController.h; sourceTree = "<group>"; };
+		E2FB0F641DDE85490046E2F2 /* ImageDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDetailController.m; sourceTree = "<group>"; };
+		E2FB0F661DDE85C00046E2F2 /* ImagePresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePresentation.h; sourceTree = "<group>"; };
+		E2FB0F671DDE85C00046E2F2 /* ImagePresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePresentation.m; sourceTree = "<group>"; };
+		E2FB0F691DDE910E0046E2F2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EB7FFA8073A66D1B55AA088D /* Pods-instaMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-instaMeUITests/Pods-instaMeUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2FB0F1A1DDE10E50046E2F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2FB0F6A1DDE910E0046E2F2 /* CoreLocation.framework in Frameworks */,
+				A32297D073E2CE766C9CACB5 /* libPods-instaMe.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2FB0F331DDE10E50046E2F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6F72C5625E250F72DF7C6D5 /* libPods-instaMeTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2FB0F3E1DDE10E50046E2F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				997B21DBA15D54BE70B9F312 /* libPods-instaMeUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B54F161EC7AE3802EF0F8DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2FB0F691DDE910E0046E2F2 /* CoreLocation.framework */,
+				49660B6ECCFB5AEAF371D73F /* libPods-instaMe.a */,
+				35B8ACAF745FBDDB9521147D /* libPods-instaMeTests.a */,
+				ACE664CA0F7E8C3905C41A9C /* libPods-instaMeUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2FB0F141DDE10E50046E2F2 = {
+			isa = PBXGroup;
+			children = (
+				E2FB0F1F1DDE10E50046E2F2 /* instaMe */,
+				E2FB0F391DDE10E50046E2F2 /* instaMeTests */,
+				E2FB0F441DDE10E50046E2F2 /* instaMeUITests */,
+				E2FB0F1E1DDE10E50046E2F2 /* Products */,
+				E2FB0F611DDE5CC50046E2F2 /* Vendor */,
+				F58E0A8D4E29693D07632FD3 /* Pods */,
+				6B54F161EC7AE3802EF0F8DB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E2FB0F1E1DDE10E50046E2F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2FB0F1D1DDE10E50046E2F2 /* instaMe.app */,
+				E2FB0F361DDE10E50046E2F2 /* instaMeTests.xctest */,
+				E2FB0F411DDE10E50046E2F2 /* instaMeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2FB0F1F1DDE10E50046E2F2 /* instaMe */ = {
+			isa = PBXGroup;
+			children = (
+				E2FB0F231DDE10E50046E2F2 /* AppDelegate.h */,
+				E2FB0F241DDE10E50046E2F2 /* AppDelegate.m */,
+				E2FB0F261DDE10E50046E2F2 /* SplashViewController.h */,
+				E2FB0F271DDE10E50046E2F2 /* SplashViewController.m */,
+				E2FB0F581DDE332F0046E2F2 /* AuthViewController.h */,
+				E2FB0F591DDE332F0046E2F2 /* AuthViewController.m */,
+				E2FB0F531DDE151B0046E2F2 /* ImageCollectionController.h */,
+				E2FB0F541DDE151B0046E2F2 /* ImageCollectionController.m */,
+				E2FB0F661DDE85C00046E2F2 /* ImagePresentation.h */,
+				E2FB0F671DDE85C00046E2F2 /* ImagePresentation.m */,
+				E2FB0F631DDE85490046E2F2 /* ImageDetailController.h */,
+				E2FB0F641DDE85490046E2F2 /* ImageDetailController.m */,
+				E2FB0F5B1DDE3B770046E2F2 /* Transceiver.h */,
+				E2FB0F5C1DDE3B770046E2F2 /* Transceiver.m */,
+				E2FB0F5E1DDE52680046E2F2 /* Model.h */,
+				E2FB0F5F1DDE52680046E2F2 /* Model.m */,
+				E2FB0F291DDE10E50046E2F2 /* Main.storyboard */,
+				E2FB0F2C1DDE10E50046E2F2 /* Assets.xcassets */,
+				E2FB0F2E1DDE10E50046E2F2 /* LaunchScreen.storyboard */,
+				E2FB0F311DDE10E50046E2F2 /* Info.plist */,
+				E2FB0F201DDE10E50046E2F2 /* Supporting Files */,
+			);
+			path = instaMe;
+			sourceTree = "<group>";
+		};
+		E2FB0F201DDE10E50046E2F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E2FB0F211DDE10E50046E2F2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E2FB0F391DDE10E50046E2F2 /* instaMeTests */ = {
+			isa = PBXGroup;
+			children = (
+				E2FB0F3A1DDE10E50046E2F2 /* instaMeTests.m */,
+				E2FB0F3C1DDE10E50046E2F2 /* Info.plist */,
+			);
+			path = instaMeTests;
+			sourceTree = "<group>";
+		};
+		E2FB0F441DDE10E50046E2F2 /* instaMeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E2FB0F451DDE10E50046E2F2 /* instaMeUITests.m */,
+				E2FB0F471DDE10E50046E2F2 /* Info.plist */,
+			);
+			path = instaMeUITests;
+			sourceTree = "<group>";
+		};
+		E2FB0F611DDE5CC50046E2F2 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		F58E0A8D4E29693D07632FD3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A0D15E4C1C6A769CDDFC1EBA /* Pods-instaMe.debug.xcconfig */,
+				50E998CC7E3D38FE49E8E303 /* Pods-instaMe.release.xcconfig */,
+				C02FBD95F9A5B109B0AD6539 /* Pods-instaMeTests.debug.xcconfig */,
+				E0FF5A4350E6BF362D378913 /* Pods-instaMeTests.release.xcconfig */,
+				3FF4BD5980F2CB21BE6216C2 /* Pods-instaMeUITests.debug.xcconfig */,
+				EB7FFA8073A66D1B55AA088D /* Pods-instaMeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2FB0F1C1DDE10E50046E2F2 /* instaMe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2FB0F4A1DDE10E50046E2F2 /* Build configuration list for PBXNativeTarget "instaMe" */;
+			buildPhases = (
+				A8EF5534CEE4FB3A91D6F7D0 /* 📦 Check Pods Manifest.lock */,
+				E2FB0F191DDE10E50046E2F2 /* Sources */,
+				E2FB0F1A1DDE10E50046E2F2 /* Frameworks */,
+				E2FB0F1B1DDE10E50046E2F2 /* Resources */,
+				817B47BC8D199F2C8204D4FC /* 📦 Embed Pods Frameworks */,
+				7A1BAF7B76388D73300906C2 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = instaMe;
+			productName = instaMe;
+			productReference = E2FB0F1D1DDE10E50046E2F2 /* instaMe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E2FB0F351DDE10E50046E2F2 /* instaMeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2FB0F4D1DDE10E50046E2F2 /* Build configuration list for PBXNativeTarget "instaMeTests" */;
+			buildPhases = (
+				298F646A08CC68385A1039BF /* 📦 Check Pods Manifest.lock */,
+				E2FB0F321DDE10E50046E2F2 /* Sources */,
+				E2FB0F331DDE10E50046E2F2 /* Frameworks */,
+				E2FB0F341DDE10E50046E2F2 /* Resources */,
+				806AA01B9EB7689218660BA2 /* 📦 Embed Pods Frameworks */,
+				F7C710AE36238F8902022C96 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2FB0F381DDE10E50046E2F2 /* PBXTargetDependency */,
+			);
+			name = instaMeTests;
+			productName = instaMeTests;
+			productReference = E2FB0F361DDE10E50046E2F2 /* instaMeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E2FB0F401DDE10E50046E2F2 /* instaMeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2FB0F501DDE10E50046E2F2 /* Build configuration list for PBXNativeTarget "instaMeUITests" */;
+			buildPhases = (
+				C53B6EE7D1B1B51808373D04 /* 📦 Check Pods Manifest.lock */,
+				E2FB0F3D1DDE10E50046E2F2 /* Sources */,
+				E2FB0F3E1DDE10E50046E2F2 /* Frameworks */,
+				E2FB0F3F1DDE10E50046E2F2 /* Resources */,
+				11C2099180AA4BF58F0E62D8 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2FB0F431DDE10E50046E2F2 /* PBXTargetDependency */,
+			);
+			name = instaMeUITests;
+			productName = instaMeUITests;
+			productReference = E2FB0F411DDE10E50046E2F2 /* instaMeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2FB0F151DDE10E50046E2F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Tom Broadbent";
+				TargetAttributes = {
+					E2FB0F1C1DDE10E50046E2F2 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					E2FB0F351DDE10E50046E2F2 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = E2FB0F1C1DDE10E50046E2F2;
+					};
+					E2FB0F401DDE10E50046E2F2 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = E2FB0F1C1DDE10E50046E2F2;
+					};
+				};
+			};
+			buildConfigurationList = E2FB0F181DDE10E50046E2F2 /* Build configuration list for PBXProject "instaMe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E2FB0F141DDE10E50046E2F2;
+			productRefGroup = E2FB0F1E1DDE10E50046E2F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2FB0F1C1DDE10E50046E2F2 /* instaMe */,
+				E2FB0F351DDE10E50046E2F2 /* instaMeTests */,
+				E2FB0F401DDE10E50046E2F2 /* instaMeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E2FB0F1B1DDE10E50046E2F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2FB0F301DDE10E50046E2F2 /* LaunchScreen.storyboard in Resources */,
+				E2FB0F2D1DDE10E50046E2F2 /* Assets.xcassets in Resources */,
+				E2FB0F2B1DDE10E50046E2F2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2FB0F341DDE10E50046E2F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2FB0F3F1DDE10E50046E2F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11C2099180AA4BF58F0E62D8 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-instaMeUITests/Pods-instaMeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		298F646A08CC68385A1039BF /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7A1BAF7B76388D73300906C2 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-instaMe/Pods-instaMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		806AA01B9EB7689218660BA2 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-instaMeTests/Pods-instaMeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		817B47BC8D199F2C8204D4FC /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-instaMe/Pods-instaMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8EF5534CEE4FB3A91D6F7D0 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C53B6EE7D1B1B51808373D04 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F7C710AE36238F8902022C96 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-instaMeTests/Pods-instaMeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2FB0F191DDE10E50046E2F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2FB0F281DDE10E50046E2F2 /* SplashViewController.m in Sources */,
+				E2FB0F5A1DDE332F0046E2F2 /* AuthViewController.m in Sources */,
+				E2FB0F5D1DDE3B770046E2F2 /* Transceiver.m in Sources */,
+				E2FB0F681DDE85C00046E2F2 /* ImagePresentation.m in Sources */,
+				E2FB0F551DDE151B0046E2F2 /* ImageCollectionController.m in Sources */,
+				E2FB0F651DDE85490046E2F2 /* ImageDetailController.m in Sources */,
+				E2FB0F601DDE52680046E2F2 /* Model.m in Sources */,
+				E2FB0F251DDE10E50046E2F2 /* AppDelegate.m in Sources */,
+				E2FB0F221DDE10E50046E2F2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2FB0F321DDE10E50046E2F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2FB0F3B1DDE10E50046E2F2 /* instaMeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2FB0F3D1DDE10E50046E2F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2FB0F461DDE10E50046E2F2 /* instaMeUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E2FB0F381DDE10E50046E2F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2FB0F1C1DDE10E50046E2F2 /* instaMe */;
+			targetProxy = E2FB0F371DDE10E50046E2F2 /* PBXContainerItemProxy */;
+		};
+		E2FB0F431DDE10E50046E2F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2FB0F1C1DDE10E50046E2F2 /* instaMe */;
+			targetProxy = E2FB0F421DDE10E50046E2F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E2FB0F291DDE10E50046E2F2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2FB0F2A1DDE10E50046E2F2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E2FB0F2E1DDE10E50046E2F2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2FB0F2F1DDE10E50046E2F2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E2FB0F481DDE10E50046E2F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E2FB0F491DDE10E50046E2F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E2FB0F4B1DDE10E50046E2F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0D15E4C1C6A769CDDFC1EBA /* Pods-instaMe.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = instaMe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tombroadbent.instaMe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E2FB0F4C1DDE10E50046E2F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50E998CC7E3D38FE49E8E303 /* Pods-instaMe.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = instaMe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tombroadbent.instaMe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E2FB0F4E1DDE10E50046E2F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C02FBD95F9A5B109B0AD6539 /* Pods-instaMeTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = instaMeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tombroadbent.instaMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/instaMe.app/instaMe";
+			};
+			name = Debug;
+		};
+		E2FB0F4F1DDE10E50046E2F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0FF5A4350E6BF362D378913 /* Pods-instaMeTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = instaMeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tombroadbent.instaMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/instaMe.app/instaMe";
+			};
+			name = Release;
+		};
+		E2FB0F511DDE10E50046E2F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FF4BD5980F2CB21BE6216C2 /* Pods-instaMeUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = instaMeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tombroadbent.instaMeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = instaMe;
+			};
+			name = Debug;
+		};
+		E2FB0F521DDE10E50046E2F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB7FFA8073A66D1B55AA088D /* Pods-instaMeUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = instaMeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tombroadbent.instaMeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = instaMe;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2FB0F181DDE10E50046E2F2 /* Build configuration list for PBXProject "instaMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2FB0F481DDE10E50046E2F2 /* Debug */,
+				E2FB0F491DDE10E50046E2F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2FB0F4A1DDE10E50046E2F2 /* Build configuration list for PBXNativeTarget "instaMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2FB0F4B1DDE10E50046E2F2 /* Debug */,
+				E2FB0F4C1DDE10E50046E2F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2FB0F4D1DDE10E50046E2F2 /* Build configuration list for PBXNativeTarget "instaMeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2FB0F4E1DDE10E50046E2F2 /* Debug */,
+				E2FB0F4F1DDE10E50046E2F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2FB0F501DDE10E50046E2F2 /* Build configuration list for PBXNativeTarget "instaMeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2FB0F511DDE10E50046E2F2 /* Debug */,
+				E2FB0F521DDE10E50046E2F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E2FB0F151DDE10E50046E2F2 /* Project object */;
+}
