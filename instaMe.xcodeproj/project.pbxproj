@@ -25,6 +25,13 @@
 		E2FB0F651DDE85490046E2F2 /* ImageDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F641DDE85490046E2F2 /* ImageDetailController.m */; };
 		E2FB0F681DDE85C00046E2F2 /* ImagePresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F671DDE85C00046E2F2 /* ImagePresentation.m */; };
 		E2FB0F6A1DDE910E0046E2F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2FB0F691DDE910E0046E2F2 /* CoreLocation.framework */; };
+		E2FB0F6E1DDF6A290046E2F2 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F6C1DDF6A290046E2F2 /* compass.png */; };
+		E2FB0F6F1DDF6A290046E2F2 /* compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F6D1DDF6A290046E2F2 /* compass@2x.png */; };
+		E2FB0F731DDF87010046E2F2 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F711DDF87010046E2F2 /* clock.png */; };
+		E2FB0F741DDF87010046E2F2 /* clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F721DDF87010046E2F2 /* clock@2x.png */; };
+		E2FB0F771DDFAB5E0046E2F2 /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F761DDFAB5E0046E2F2 /* State.m */; };
+		E2FB0F7A1DDFB1570046E2F2 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F781DDFB1570046E2F2 /* like.png */; };
+		E2FB0F7B1DDFB1570046E2F2 /* like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F791DDFB1570046E2F2 /* like@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +89,14 @@
 		E2FB0F661DDE85C00046E2F2 /* ImagePresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePresentation.h; sourceTree = "<group>"; };
 		E2FB0F671DDE85C00046E2F2 /* ImagePresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePresentation.m; sourceTree = "<group>"; };
 		E2FB0F691DDE910E0046E2F2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E2FB0F6C1DDF6A290046E2F2 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
+		E2FB0F6D1DDF6A290046E2F2 /* compass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compass@2x.png"; sourceTree = "<group>"; };
+		E2FB0F711DDF87010046E2F2 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		E2FB0F721DDF87010046E2F2 /* clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock@2x.png"; sourceTree = "<group>"; };
+		E2FB0F751DDFAB5E0046E2F2 /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
+		E2FB0F761DDFAB5E0046E2F2 /* State.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = State.m; sourceTree = "<group>"; };
+		E2FB0F781DDFB1570046E2F2 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
+		E2FB0F791DDFB1570046E2F2 /* like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like@2x.png"; sourceTree = "<group>"; };
 		EB7FFA8073A66D1B55AA088D /* Pods-instaMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-instaMeUITests/Pods-instaMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,7 +182,10 @@
 				E2FB0F5C1DDE3B770046E2F2 /* Transceiver.m */,
 				E2FB0F5E1DDE52680046E2F2 /* Model.h */,
 				E2FB0F5F1DDE52680046E2F2 /* Model.m */,
+				E2FB0F751DDFAB5E0046E2F2 /* State.h */,
+				E2FB0F761DDFAB5E0046E2F2 /* State.m */,
 				E2FB0F291DDE10E50046E2F2 /* Main.storyboard */,
+				E2FB0F6B1DDF6A290046E2F2 /* Assets */,
 				E2FB0F2C1DDE10E50046E2F2 /* Assets.xcassets */,
 				E2FB0F2E1DDE10E50046E2F2 /* LaunchScreen.storyboard */,
 				E2FB0F311DDE10E50046E2F2 /* Info.plist */,
@@ -207,6 +225,19 @@
 			children = (
 			);
 			name = Vendor;
+			sourceTree = "<group>";
+		};
+		E2FB0F6B1DDF6A290046E2F2 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E2FB0F711DDF87010046E2F2 /* clock.png */,
+				E2FB0F721DDF87010046E2F2 /* clock@2x.png */,
+				E2FB0F6C1DDF6A290046E2F2 /* compass.png */,
+				E2FB0F6D1DDF6A290046E2F2 /* compass@2x.png */,
+				E2FB0F781DDFB1570046E2F2 /* like.png */,
+				E2FB0F791DDFB1570046E2F2 /* like@2x.png */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		F58E0A8D4E29693D07632FD3 /* Pods */ = {
@@ -333,9 +364,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2FB0F7B1DDFB1570046E2F2 /* like@2x.png in Resources */,
+				E2FB0F7A1DDFB1570046E2F2 /* like.png in Resources */,
+				E2FB0F731DDF87010046E2F2 /* clock.png in Resources */,
+				E2FB0F6E1DDF6A290046E2F2 /* compass.png in Resources */,
 				E2FB0F301DDE10E50046E2F2 /* LaunchScreen.storyboard in Resources */,
 				E2FB0F2D1DDE10E50046E2F2 /* Assets.xcassets in Resources */,
+				E2FB0F741DDF87010046E2F2 /* clock@2x.png in Resources */,
 				E2FB0F2B1DDE10E50046E2F2 /* Main.storyboard in Resources */,
+				E2FB0F6F1DDF6A290046E2F2 /* compass@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2FB0F281DDE10E50046E2F2 /* SplashViewController.m in Sources */,
+				E2FB0F771DDFAB5E0046E2F2 /* State.m in Sources */,
 				E2FB0F5A1DDE332F0046E2F2 /* AuthViewController.m in Sources */,
 				E2FB0F5D1DDE3B770046E2F2 /* Transceiver.m in Sources */,
 				E2FB0F681DDE85C00046E2F2 /* ImagePresentation.m in Sources */,

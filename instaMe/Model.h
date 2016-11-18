@@ -24,12 +24,15 @@
 
 @protocol MediaObject <NSObject>
 - (MediaId *)mediaId;
+- (BOOL)isLikedByUser;
+- (NSInteger)likeCount;
 @end
 
 
 @interface User : JSONModel
 @property (nonatomic) UserId <Ignore> *userId;
 @property (nonatomic) NSString *username;
+@property (nonatomic) NSString *fullname;
 @end
 
 
@@ -43,8 +46,11 @@
 @interface ImageMediaObject : JSONModel <MediaObject>
 @property (nonatomic) MediaId <Ignore> *mediaId;
 @property (nonatomic) User *user;
+@property (nonatomic) NSInteger likeCount;
+@property (nonatomic) BOOL userHasLiked;
 @property (nonatomic) ImageObject *thumbnailImage;
 @property (nonatomic) ImageObject *standardImage;
+
 @end
 
 
@@ -53,5 +59,5 @@
 
 - (NSURLSessionDataTask *)requestRecentMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure;
 - (NSURLSessionDataTask *)requestNearbyMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure;
-
+- (NSURLSessionDataTask *)requestMediaById:(MediaId *)mediaId success:(void(^)(id<MediaObject>))success failure:(void(^)(NSError *))failure;
 @end

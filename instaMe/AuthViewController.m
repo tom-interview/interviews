@@ -45,12 +45,12 @@
 @implementation AuthViewController
 
 - (NSString *)clientId {
-    //return @"b039af725bfa48a5bcfd5a3f4a3933dd"; // my sandbox
-    return @"0637825256de4d9e9c969ec594b032c8"; // 23andMe sandbox
+    return @"b039af725bfa48a5bcfd5a3f4a3933dd"; // my sandbox
+    //return @"0637825256de4d9e9c969ec594b032c8"; // 23andMe sandbox
 }
 - (NSString *)redirectHost {
-    //return @"tombroadbent.me";
-    return @"www.23andme.com";
+    return @"tombroadbent.me";
+    //return @"www.23andme.com";
 }
 - (NSString *)redirectUrl {
     return [NSString stringWithFormat:@"https://%@", self.redirectHost];
@@ -73,7 +73,7 @@
 }
 - (void)initPresentation {
     [self.errorMessage setTextColor:[UIColor darkGrayColor]];
-    [self.errorButton.layer setCornerRadius:8];
+    [self.errorButton.layer setCornerRadius:4];
     [self.errorButton setBackgroundColor:[UIColor lightGrayColor]];
     [self.errorButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
 
@@ -102,6 +102,11 @@
     [self.errorButton setTitle:errorPresentation.errorButton forState:UIControlStateNormal];
 }
 
+- (IBAction)tappedErrorButton:(UIButton *)b {
+    [self presentAuthentication];
+}
+
+#pragma mark - UIWebViewDelegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     BOOL shouldLoad = YES;
 
@@ -148,6 +153,7 @@
     [self.loadingView setHidden:YES];
 }
 
+#pragma mark - helpers
 - (nonnull ErrorPresentation *)errorPresentationForError:(NSString *)error {
     ErrorPresentation *errorPresentation = [ErrorPresentation errorPresentationWithTitle:@"Unknown Error" message:@"An unknown error occurred." button:@"Retry"];
 

@@ -21,16 +21,20 @@
     _imagePresentation = imagePresentation;
     [_imagePresentation setDelegate:self];
 }
+- (void)viewDidLoad {
+    [super viewDidLoad];
 
+    [self.view setBackgroundColor:[UIColor colorWithWhite:.6 alpha:1]];
+}
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
     [self updatePresentation];
 }
 - (void)updatePresentation {
     UIImage *image;
     if ((image = self.imagePresentation.image)) {
         [self.imageView setImage:self.imagePresentation.image];
-    }
-    else {
     }
 }
 

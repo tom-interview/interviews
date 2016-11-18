@@ -10,7 +10,27 @@
 #import "Model.h"
 #import "Transceiver.h"
 
+@interface ImagePresentation()
+@property (strong, nonatomic) NSNumber *transientLiked; // user has tapped like button; keep track of transient state until item refreshes
+@end
+
 @implementation ImagePresentation
+
+- (BOOL)isLiked {
+    return (self.transientLiked ? [self.transientLiked boolValue] : [self.mediaObject isLikedByUser]);
+}
+- (void)setLiked:(BOOL)liked {
+    [self setTransientLiked:[NSNumber numberWithBool:liked]];
+}
+- (NSString *)likeLabel {
+    NSInteger likeCount = [self.mediaObject likeCount];
+    NSString *likeLabel = (likeCount <= 0 ? nil : likeCount > 10 ? @"+" : [NSNumber numberWithInteger:likeCount].stringValue);
+    return likeLabel;
+}
+- (void)setMediaObject:(id<MediaObject>)mediaObject {
+    _mediaObject = mediaObject;
+    [self setTransientLiked:nil];
+}
 
 - (instancetype)initWithUrl:(NSString *)url size:(CGSize)size label:(NSString *)label {
     if ((self = [super init])) {
@@ -23,10 +43,19 @@
 + (instancetype)imagePresentationWithUrl:(NSString *)url size:(CGSize)size label:(NSString *)label {
     return [[self alloc] initWithUrl:url size:size label:label];
 }
++ (instancetype)imagePresentationWithImageMediaObject:(ImageMediaObject *)imageMediaObject {
+
+    CGSize size = CGSizeMake(imageMediaObject.standardImage.width, imageMediaObject.standardImage.height);
+    ImagePresentation *presentation = [self imagePresentationWithUrl:imageMediaObject.standardImage.url size:size label:imageMediaObject.user.fullname];
+    [presentation setMediaObject:imageMediaObject];
+
+    return presentation;
+}
+
 + (instancetype)clonePresentation:(ImagePresentation *)presentation {
     ImagePresentation *clone = [self imagePresentationWithUrl:presentation.url size:presentation.size label:presentation.label];
     [clone setImage:presentation.image];
-
+    [clone setMediaObject:presentation.mediaObject];
     return clone;
 }
 - (instancetype)clone {

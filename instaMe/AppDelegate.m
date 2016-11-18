@@ -15,7 +15,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    [self customizeAppearance];
+
     return YES;
 }
 
@@ -41,4 +43,9 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+- (void)customizeAppearance {
+    [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithWhite:.4 alpha:1]];
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithWhite:.4 alpha:1]];
+}
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model.h"
 
 @protocol ImagePresentationDelegate;
 
@@ -18,6 +19,11 @@
 @property (strong, nonatomic) NSString *label;
 @property (weak, nonatomic) NSURLSessionDataTask *dataTask;
 @property (weak, nonatomic) id<ImagePresentationDelegate> delegate;
+@property (strong, nonatomic) id<MediaObject> mediaObject;
+
+- (BOOL)isLiked;
+- (void)setLiked:(BOOL)liked;
+- (NSString *)likeLabel; // nil if 0 or single digit or + if > 9 
 
 - (instancetype)clone;
 - (void)requestImage;
@@ -25,6 +31,7 @@
 
 - (instancetype)initWithUrl:(NSString *)url size:(CGSize)size label:(NSString *)label;
 + (instancetype)imagePresentationWithUrl:(NSString *)url size:(CGSize)size label:(NSString *)label;
++ (instancetype)imagePresentationWithImageMediaObject:(ImageMediaObject *)imageMediaObject;
 + (instancetype)clonePresentation:(ImagePresentation *)presentation;
 
 @end

@@ -10,6 +10,8 @@
 #import "Transceiver.h"
 
 @interface SplashViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *authButton;
+@property (weak, nonatomic) IBOutlet UIView *promptView;
 
 @end
 
@@ -17,22 +19,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [self.authButton setTitle:@"Next" forState:UIControlStateNormal];
+    [self.authButton.layer setCornerRadius:4];
+    [self.authButton setBackgroundColor:[UIColor lightGrayColor]];
+    [self.authButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    [self.promptView setHidden:[Transceiver.sharedInstance isAuthenticated]];
+}
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    NSString *segueId;
     if ([Transceiver.sharedInstance isAuthenticated]) {
-        segueId = @"PresentImages";
+        [self performSegueWithIdentifier:@"PresentImages" sender:self];
     }
-    else {
-        segueId = @"PresentAuth";
-    }
-
-    [self performSegueWithIdentifier:segueId sender:self];
 }
 
+- (IBAction)tappedAuthButton:(UIButton *)b {
+    [self performSegueWithIdentifier:@"PresentAuth" sender:self];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
