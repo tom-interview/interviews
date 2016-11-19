@@ -45,12 +45,12 @@
 @implementation AuthViewController
 
 - (NSString *)clientId {
-    return @"b039af725bfa48a5bcfd5a3f4a3933dd"; // my sandbox
-    //return @"0637825256de4d9e9c969ec594b032c8"; // 23andMe sandbox
+    //return @"b039af725bfa48a5bcfd5a3f4a3933dd"; // my sandbox
+    return @"0637825256de4d9e9c969ec594b032c8"; // 23andMe sandbox
 }
 - (NSString *)redirectHost {
-    return @"tombroadbent.me";
-    //return @"www.23andme.com";
+    //return @"tombroadbent.me";
+    return @"www.23andme.com";
 }
 - (NSString *)redirectUrl {
     return [NSString stringWithFormat:@"https://%@", self.redirectHost];
