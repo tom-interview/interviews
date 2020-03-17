@@ -140,7 +140,7 @@
 
     return shouldLoad;
 }
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error {
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     if ([error.domain isEqualToString:@"WebKitErrorDomain"] && error.code == 102) { // GOTCHA 102 is "Frame load interrupted" caused by above; anything else is a legit load error
         NSLog(@"caught reload error; nothing wrong..");
     }
