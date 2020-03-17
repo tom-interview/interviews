@@ -28,6 +28,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    // HACK sidestep auth controller for now
+    [[Transceiver sharedInstance] setKey:@"hPZGRXFTxALgeadQwSTUIZ0oNRcLmrXB"];
 
     [self.promptView setHidden:[Transceiver.sharedInstance isAuthenticated]];
 }
@@ -40,7 +43,7 @@
 }
 
 - (IBAction)tappedAuthButton:(UIButton *)b {
-    [self performSegueWithIdentifier:@"PresentAuth" sender:self];
+    [self performSegueWithIdentifier:@"PresentImages" sender:self];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
