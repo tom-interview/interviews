@@ -10,6 +10,12 @@ DEPENDENCIES:
   - JSONModel
   - SAMKeychain
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CHTCollectionViewWaterfallLayout
+    - JSONModel
+    - SAMKeychain
+
 SPEC CHECKSUMS:
   CHTCollectionViewWaterfallLayout: 775ff73f48cfc13859b62d8bceb96e772e4a0318
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
@@ -17,4 +23,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 521301d54fcd6b4b1e0417e47fe3202eb3b11a2d
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.5.2
