@@ -129,11 +129,11 @@
         @throw NSInvalidArgumentException;
     }
 
-    NSString *urlString = [NSString stringWithFormat:@"https://api.instagram.com/v1%@", endpoint];
+    NSString *urlString = [NSString stringWithFormat:@"https://api.giphy.com%@", endpoint];
 
     NSURLComponents *urlComponents = [NSURLComponents componentsWithString:urlString];
     NSMutableArray *queryItems = [NSMutableArray array];
-    [queryItems addObject:[NSURLQueryItem queryItemWithName:@"access_token" value:self.token]];
+    [queryItems addObject:[NSURLQueryItem queryItemWithName:@"api_key" value:self.key]];
     [queryParams enumerateKeysAndObjectsUsingBlock:^(NSString *  _Nonnull name, NSString *  _Nonnull value, BOOL * _Nonnull stop) {
         [queryItems addObject:[NSURLQueryItem queryItemWithName:name value:value]];
     }];
@@ -144,8 +144,13 @@
 }
 
 #pragma mark - Media requests
-- (NSURLSessionDataTask *)retrieveMediaForAuthenticatedUserWithSuccess:(void (^)(NSString * _Nullable jsonString))success failure:(void (^)(NSError * _Nullable error))failure {
-    NSURLRequest *request = [self requestWithEndpoint:@"/users/self/media/recent" queryParams:nil];
+- (NSURLSessionDataTask *)retrieveMediaTrendingWithSuccess:(void (^)(NSString * _Nullable))success failure:(void (^)(NSError * _Nullable))failure {
+    NSDictionary  *queryParams = @{
+        @"limit": @"25",
+        @"rating": @"G"
+    };
+    
+    NSURLRequest *request = [self requestWithEndpoint:@"/v1/gifs/trending" queryParams:queryParams];
     return [self retrieveJsonWithRequest:request success:^(NSString * _Nullable jsonString) {
         if (success) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -160,13 +165,13 @@
         }
     }];
 }
-- (NSURLSessionDataTask *)retrieveMediaNearLocationCoordinate:(CLLocationCoordinate2D)coordinate success:(void (^)(NSString * _Nullable))success failure:(void (^)(NSError * _Nullable))failure {
+- (NSURLSessionDataTask *)retrieveMediaWithQuery:(NSString *)query success:(void (^)(NSString * _Nullable))success failure:(void (^)(NSError * _Nullable))failure {
     NSDictionary *queryParams = @{
-                                  @"lat": [[NSNumber numberWithDouble:coordinate.latitude] stringValue],
-                                  @"lng": [[NSNumber numberWithDouble:coordinate.longitude] stringValue],
-                                  };
+        @"q": query,
+        @"rating": @"G",
+    };
 
-    NSMutableURLRequest *request = [self requestWithEndpoint:@"/media/search" queryParams:queryParams];
+    NSMutableURLRequest *request = [self requestWithEndpoint:@"/v1/gifs/search" queryParams:queryParams];
     return [self retrieveJsonWithRequest:request success:^(NSString * _Nullable jsonString) {
         if (success) {
             dispatch_async(dispatch_get_main_queue(), ^{

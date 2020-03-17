@@ -45,8 +45,8 @@
 }
 + (instancetype)imagePresentationWithImageMediaObject:(ImageMediaObject *)imageMediaObject {
 
-    CGSize size = CGSizeMake(imageMediaObject.standardImage.width, imageMediaObject.standardImage.height);
-    ImagePresentation *presentation = [self imagePresentationWithUrl:imageMediaObject.standardImage.url size:size label:imageMediaObject.user.fullname];
+    CGSize size = CGSizeMake(imageMediaObject.images.downsized.width, imageMediaObject.images.downsized.height);
+    ImagePresentation *presentation = [self imagePresentationWithUrl:imageMediaObject.images.downsized.url size:size label:imageMediaObject.title];
     [presentation setMediaObject:imageMediaObject];
 
     return presentation;

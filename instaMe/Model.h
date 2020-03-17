@@ -40,15 +40,19 @@
 @property (nonatomic) CGFloat height;
 @end
 
+@interface ImagesObject : JSONModel
+@property (nonatomic) ImageObject *downsized;
+@property (nonatomic) ImageObject *original;
+@end
+
 
 @interface ImageMediaObject : JSONModel <MediaObject>
 @property (nonatomic) MediaId <Ignore> *mediaId;
-@property (nonatomic) User *user;
-@property (nonatomic) NSInteger likeCount;
-@property (nonatomic) BOOL userHasLiked;
-@property (nonatomic) ImageObject *thumbnailImage;
-@property (nonatomic) ImageObject *standardImage;
-
+//@property (nonatomic) User *user;
+//@property (nonatomic) NSInteger likeCount;
+//@property (nonatomic) BOOL userHasLiked;
+@property (nonatomic) NSString *title;
+@property (nonatomic) ImagesObject *images;
 @end
 
 

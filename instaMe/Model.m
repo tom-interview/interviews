@@ -106,6 +106,9 @@
 @implementation ImageObject
 @end
 
+@implementation ImagesObject
+@end
+
 
 @protocol ImageMediaObject;
 @protocol MediaResponse <NSObject>
@@ -142,17 +145,15 @@
     return sharedInstance;
 }
 - (NSURLSessionDataTask *)requestRecentMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure { // FIXME pass a block to collapse common code (see below)
-    return [[Transceiver sharedInstance] retrieveMediaForAuthenticatedUserWithSuccess:^(NSString * _Nullable jsonString) {
+    return [[Transceiver sharedInstance] retrieveMediaTrendingWithSuccess:^(NSString * _Nullable jsonString) {
         [self handleMediaListResponseJsonString:jsonString success:success failure:failure];
     } failure:failure];
 }
 
 - (NSURLSessionDataTask *)requestNearbyMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure {
-    // FIXME get user location via CoreLocation
-    //CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(38.6717358, -121.1573656); // Trader Joe's
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(37.3952126, -122.0813481); // 23andMe
-
-    return [[Transceiver sharedInstance] retrieveMediaNearLocationCoordinate:coordinate success:^(NSString * _Nullable jsonString) {
+    // FIXME allow user to pass tag
+    NSString *query = @"coronavirus";
+    return [[Transceiver sharedInstance] retrieveMediaWithQuery:query success:^(NSString * _Nullable jsonString) {
         [self handleMediaListResponseJsonString:jsonString success:success failure:failure];
     } failure:failure];
 }
