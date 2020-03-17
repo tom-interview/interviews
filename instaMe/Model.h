@@ -24,8 +24,6 @@
 
 @protocol MediaObject <NSObject>
 - (MediaId *)mediaId;
-- (BOOL)isLikedByUser;
-- (NSInteger)likeCount;
 @end
 
 

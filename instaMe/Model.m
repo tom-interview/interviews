@@ -80,7 +80,7 @@
 @implementation ImageMediaObject
 
 - (BOOL)isLikedByUser {
-    return self.userHasLiked;
+    return false;
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict error:(NSError *__autoreleasing *)err {
