@@ -37,16 +37,21 @@
 
 @interface Transceiver()
 @property (strong, nonatomic) NSString *token;
+@property (strong, nonatomic) NSString *key;
 @end
 
 @implementation Transceiver
 
 - (BOOL)isAuthenticated {
-    return ([self.token length] > 0);
+    return ([self.token length] > 0 || [self.key length] > 0);
 }
 - (void)setToken:(NSString *)token {
     _token = token;
     [[State sharedInstance] setAccessToken:token];
+}
+- (void)setKey:(NSString *)key {
+    _key = key;
+    [[State sharedInstance] setApiKey:key];
 }
 
 + (instancetype)sharedInstance {

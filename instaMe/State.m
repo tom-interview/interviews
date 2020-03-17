@@ -62,4 +62,11 @@ static NSString *KEY_accessToken = @"accessToken";
     [self setSecureString:accessToken forKey:KEY_accessToken];
 }
 
+static NSString *KEY_apiKey = @"api_key";
+- (NSString *)apiKey {
+    return [self secureStringForKey:KEY_apiKey];
+}
+- (void)setApiKey:(NSString *)apiKey {
+    [self setSecureString:apiKey forKey:KEY_apiKey];
+}
 @end

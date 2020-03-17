@@ -14,4 +14,7 @@
 - (NSString *)accessToken;
 - (void)setAccessToken:(NSString *)accessToken;
 
+- (NSString *)apiKey;
+- (void)setApiKey:(NSString *)apiKey;
+
 @end

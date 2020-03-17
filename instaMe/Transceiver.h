@@ -20,6 +20,7 @@ typedef enum : NSUInteger {
 @interface Transceiver : NSObject
 
 - (void)setToken:(nullable NSString *)token;
+- (void)setKey:(nullable NSString *)key;
 - (BOOL)isAuthenticated;
 
 + (nonnull instancetype)sharedInstance;
