@@ -37,13 +37,19 @@
 @property (weak, nonatomic) IBOutlet UIButton *errorButton;
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
 
+- (NSString *)oauthUrl;
 - (NSString *)clientId;
 - (NSString *)redirectHost;
 - (NSString *)redirectUrl;
+- (NSString *)responseType;
 @end
 
 @implementation AuthViewController
 
+- (NSString *)oauthUrl {
+    return @"https://api.instagram.com/oauth/authorize/";
+    //return @"https://api.shutterstock.com/v2/oauth/authorize/";
+}
 - (NSString *)clientId {
     //return @"b039af725bfa48a5bcfd5a3f4a3933dd"; // my sandbox
     return @"0637825256de4d9e9c969ec594b032c8"; // 23andMe sandbox
@@ -55,11 +61,12 @@
 - (NSString *)redirectUrl {
     return [NSString stringWithFormat:@"https://%@", self.redirectHost];
 }
+- (NSString *)responseType {
+    return @"token"; // insta
+    //return @"code"; // shutter
+}
 - (NSString *)scopes {
-    NSArray *scopes = @[ @"basic",
-                         @"public_content",
-                         @"likes",
-                         ];
+    NSArray *scopes = @[ @"basic" ];
     return [scopes componentsJoinedByString:@"+"];
 }
 
@@ -85,7 +92,7 @@
     [self.errorView setHidden:YES];
 
 
-    NSString *authString = [NSString stringWithFormat:@"https://api.instagram.com/oauth/authorize/?scope=%@&client_id=%@&redirect_uri=%@&response_type=token", self.scopes, self.clientId, self.redirectUrl];
+    NSString *authString = [NSString stringWithFormat:@"%@?scope=%@&client_id=%@&redirect_uri=%@&response_type=%@", self.oauthUrl, self.scopes, self.clientId, self.redirectUrl, self.responseType];
     NSURL *authUrl = [NSURL URLWithString:authString];
     NSURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:authUrl];
 
