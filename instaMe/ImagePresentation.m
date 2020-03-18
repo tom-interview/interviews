@@ -47,6 +47,8 @@
 
     CGSize size = CGSizeMake(imageMediaObject.images.downsized.width, imageMediaObject.images.downsized.height);
     ImagePresentation *presentation = [self imagePresentationWithUrl:imageMediaObject.images.downsized.url size:size label:imageMediaObject.title];
+    [presentation setHeaderLabel:imageMediaObject.imageId];
+    [presentation setUrlOrig:imageMediaObject.images.original.url];
     [presentation setMediaObject:imageMediaObject];
 
     return presentation;

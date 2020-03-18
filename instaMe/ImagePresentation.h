@@ -14,9 +14,12 @@
 @interface ImagePresentation : NSObject
 
 @property (strong, nonatomic) NSString *url;
+@property (strong, nonatomic) NSString *urlOrig;
 @property (assign, nonatomic) CGSize size;
 @property (strong, nonatomic) UIImage *image;
+@property (strong, nonatomic) UIImage *imageOrig;
 @property (strong, nonatomic) NSString *label;
+@property (strong, nonatomic) NSString *headerLabel;
 @property (weak, nonatomic) NSURLSessionDataTask *dataTask;
 @property (weak, nonatomic) id<ImagePresentationDelegate> delegate;
 @property (strong, nonatomic) id<MediaObject> mediaObject;
