@@ -32,6 +32,8 @@
 		E2FB0F771DDFAB5E0046E2F2 /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F761DDFAB5E0046E2F2 /* State.m */; };
 		E2FB0F7A1DDFB1570046E2F2 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F781DDFB1570046E2F2 /* like.png */; };
 		E2FB0F7B1DDFB1570046E2F2 /* like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F791DDFB1570046E2F2 /* like@2x.png */; };
+		E8BB70572421BFC600A029E6 /* Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BB70562421BFC600A029E6 /* Operations.m */; };
+		E8BB705A2421CE4400A029E6 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BB70592421CE4400A029E6 /* ImageCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,10 @@
 		E2FB0F761DDFAB5E0046E2F2 /* State.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = State.m; sourceTree = "<group>"; };
 		E2FB0F781DDFB1570046E2F2 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
 		E2FB0F791DDFB1570046E2F2 /* like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like@2x.png"; sourceTree = "<group>"; };
+		E8BB70552421BFC600A029E6 /* Operations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Operations.h; sourceTree = "<group>"; };
+		E8BB70562421BFC600A029E6 /* Operations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Operations.m; sourceTree = "<group>"; };
+		E8BB70582421CE4400A029E6 /* ImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
+		E8BB70592421CE4400A029E6 /* ImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
 		EB7FFA8073A66D1B55AA088D /* Pods-instaMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-instaMeUITests/Pods-instaMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +180,8 @@
 				E2FB0F591DDE332F0046E2F2 /* AuthViewController.m */,
 				E2FB0F531DDE151B0046E2F2 /* ImageCollectionController.h */,
 				E2FB0F541DDE151B0046E2F2 /* ImageCollectionController.m */,
+				E8BB70582421CE4400A029E6 /* ImageCell.h */,
+				E8BB70592421CE4400A029E6 /* ImageCell.m */,
 				E2FB0F661DDE85C00046E2F2 /* ImagePresentation.h */,
 				E2FB0F671DDE85C00046E2F2 /* ImagePresentation.m */,
 				E2FB0F631DDE85490046E2F2 /* ImageDetailController.h */,
@@ -182,6 +190,8 @@
 				E2FB0F5C1DDE3B770046E2F2 /* Transceiver.m */,
 				E2FB0F5E1DDE52680046E2F2 /* Model.h */,
 				E2FB0F5F1DDE52680046E2F2 /* Model.m */,
+				E8BB70552421BFC600A029E6 /* Operations.h */,
+				E8BB70562421BFC600A029E6 /* Operations.m */,
 				E2FB0F751DDFAB5E0046E2F2 /* State.h */,
 				E2FB0F761DDFAB5E0046E2F2 /* State.m */,
 				E2FB0F291DDE10E50046E2F2 /* Main.storyboard */,
@@ -533,12 +543,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2FB0F281DDE10E50046E2F2 /* SplashViewController.m in Sources */,
+				E8BB705A2421CE4400A029E6 /* ImageCell.m in Sources */,
 				E2FB0F771DDFAB5E0046E2F2 /* State.m in Sources */,
 				E2FB0F5A1DDE332F0046E2F2 /* AuthViewController.m in Sources */,
 				E2FB0F5D1DDE3B770046E2F2 /* Transceiver.m in Sources */,
 				E2FB0F681DDE85C00046E2F2 /* ImagePresentation.m in Sources */,
 				E2FB0F551DDE151B0046E2F2 /* ImageCollectionController.m in Sources */,
 				E2FB0F651DDE85490046E2F2 /* ImageDetailController.m in Sources */,
+				E8BB70572421BFC600A029E6 /* Operations.m in Sources */,
 				E2FB0F601DDE52680046E2F2 /* Model.m in Sources */,
 				E2FB0F251DDE10E50046E2F2 /* AppDelegate.m in Sources */,
 				E2FB0F221DDE10E50046E2F2 /* main.m in Sources */,

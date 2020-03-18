@@ -41,7 +41,8 @@
 @end
 
 @interface ImagesObject : JSONModel
-@property (nonatomic) ImageObject *downsized;
+@property (nonatomic) ImageObject *downsized; // 2MB
+@property (nonatomic) ImageObject *downsized_large; // 8MB
 @property (nonatomic) ImageObject *original;
 @end
 
@@ -51,15 +52,11 @@
 //@property (nonatomic) User *user;
 //@property (nonatomic) NSInteger likeCount;
 //@property (nonatomic) BOOL userHasLiked;
+@property (nonatomic) NSString *imageId;
 @property (nonatomic) NSString *title;
 @property (nonatomic) ImagesObject *images;
 @end
 
 
 @interface Model : NSObject
-+ (instancetype)sharedInstance;
-
-- (NSURLSessionDataTask *)requestRecentMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure;
-- (NSURLSessionDataTask *)requestNearbyMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure;
-- (NSURLSessionDataTask *)requestMediaById:(MediaId *)mediaId success:(void(^)(id<MediaObject>))success failure:(void(^)(NSError *))failure;
 @end

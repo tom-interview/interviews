@@ -7,126 +7,18 @@
 //
 
 #import "ImageCollectionController.h"
+#import "ImageCell.h"
 #import "CHTCollectionViewWaterfallLayout.h"
 #import "ImageDetailController.h"
 #import "ImagePresentation.h"
 #import "Model.h"
+#import "Operations.h"
 #import "Transceiver.h"
 
 
 #pragma mark - ImageCell
 
-@protocol ImageCellDelegate;
 
-@interface ImageCell : UICollectionViewCell <ImagePresentationDelegate>
-@property (weak, nonatomic) IBOutlet UIView *containerView;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UIView *imageHeaderView;
-@property (weak, nonatomic) IBOutlet UIButton *likeButton;
-@property (weak, nonatomic) IBOutlet UIView *likeBacker;
-@property (weak, nonatomic) IBOutlet UILabel *likeLabel;
-@property (weak, nonatomic) IBOutlet UIView *imageFooterView;
-@property (weak, nonatomic) IBOutlet UILabel *imageLabel;
-
-@property (weak, nonatomic) NSTimer *likeTimer; // GOTCHA debounce like taps to avoid thrashing service
-
-@property (strong, nonatomic) ImagePresentation *imagePresentation;
-@property (weak, nonatomic) id<ImageCellDelegate>delegate;
-
-@end
-
-@protocol ImageCellDelegate <NSObject>
-- (void)imageCell:(ImageCell *)imageCell mediaObjectRequiresReload:(MediaId *)mediaId;
-@end
-
-
-@implementation ImageCell
-
-+ (NSString *)reuseId {
-    return NSStringFromClass(self);
-}
-- (void)setImagePresentation:(ImagePresentation *)imagePresentation {
-    [_imagePresentation setDelegate:nil];
-    [_imagePresentation abandonImage];
-
-    _imagePresentation = imagePresentation;
-
-    [imagePresentation setDelegate:self];
-    [imagePresentation requestImage];
-
-    [self updatePresentation];
-}
-- (void)awakeFromNib {
-    [self.containerView setBackgroundColor:[UIColor colorWithWhite:.92 alpha:1]];
-
-    [self.likeButton.layer setCornerRadius:4];
-    [self.likeButton setImage:[[UIImage imageNamed:@"like"] imageWithRenderingMode:(UIImageRenderingModeAlwaysTemplate)] forState:UIControlStateNormal];
-    [self.likeBacker.layer setCornerRadius:7];
-}
-- (void)updatePresentation {
-    [self.imageLabel setText:self.imagePresentation.label];
-    [self.imageView setImage:self.imagePresentation.image];
-
-    UIColor *tintColor = ([self.imagePresentation isLiked] ? [UIColor colorWithRed:.8 green:0 blue:0 alpha:.6] : [UIColor colorWithWhite:1 alpha:.6]);
-    UIColor *buttonColor = ([self.imagePresentation isLiked] ? [UIColor colorWithWhite:.9 alpha:.6] : [UIColor colorWithWhite:.2 alpha:.5]);
-    [self.likeButton setTintColor:tintColor];
-    [self.likeButton setBackgroundColor:buttonColor];
-    [self.likeLabel setTextColor:tintColor];
-    [self.likeLabel setText:[self.imagePresentation likeLabel]];
-    [self.likeBacker setBackgroundColor:[self.likeLabel.text length] ? [buttonColor colorWithAlphaComponent:1] : [UIColor clearColor]];
-}
-- (void)imagePresentation:(ImagePresentation *)imagePresentation didRetrieveImage:(UIImage *)image {
-    [self updatePresentation];
-}
-
-- (IBAction)tappedLikeButton:(UIButton *)b {
-    MediaId *mediaId;
-    if (![(mediaId = [self.imagePresentation.mediaObject mediaId]) isKindOfClass:[MediaId class]]) {
-        NSLog(@"unable to like w/o valid mediaId");
-        return;
-    }
-
-    [self.likeTimer invalidate];
-
-    [self.imagePresentation setLiked:![self.imagePresentation isLiked]];
-    [self updatePresentation];
-
-    NSTimer *likeTimer = [NSTimer scheduledTimerWithTimeInterval:.4 target:self selector:@selector(likeTimerFired:) userInfo:self.imagePresentation repeats:NO];
-    [self setLikeTimer:likeTimer];
-}
-- (void)likeTimerFired:(NSTimer *)t {
-
-
-    ImagePresentation *imagePresentation;
-    if ([(imagePresentation = t.userInfo) isKindOfClass:[ImagePresentation class]]) {
-
-        __weak typeof(self) wSelf = self;
-        void (^reload)(void) = ^void(void) {
-            __strong typeof(self) sSelf = wSelf;
-            if (sSelf) {
-                [sSelf.delegate imageCell:sSelf mediaObjectRequiresReload:[imagePresentation.mediaObject mediaId]];
-            }
-        };
-
-        if ([imagePresentation isLiked]) { // GOTCHA presentation has transient like state here..
-            [[Transceiver sharedInstance] likeMediaById:[imagePresentation.mediaObject mediaId] success:^{
-                reload();
-            } failure:^(NSError * _Nullable error) {
-                NSLog(@"unable to like w/ error: %@", error); // FIXME alert user? or reset state to cached state?
-                reload();
-            }];
-        }
-        else {
-            [[Transceiver sharedInstance] unlikeMediaById:[imagePresentation.mediaObject mediaId] success:^{
-                reload();
-            } failure:^(NSError * _Nullable error) {
-                NSLog(@"unable to unlike w/ error: %@", error); // FIXME alert user? or just reset state to cached state?
-                reload();
-            }];
-        }
-    }
-}
-@end
 
 
 typedef enum : NSUInteger {
@@ -283,11 +175,11 @@ typedef enum : NSUInteger {
 
     switch(mode) {
         case MediaMode_Recent:
-            dataTask = [[Model sharedInstance] requestRecentMediaWithSuccess:success failure:failure];
+            dataTask = [[Operations sharedInstance] requestRecentMediaWithSuccess:success failure:failure];
             break;
 
         case MediaMode_Nearby:
-            dataTask = [[Model sharedInstance] requestNearbyMediaWithSuccess:success failure:failure];
+            dataTask = [[Operations sharedInstance] requestNearbyMediaWithSuccess:success failure:failure];
             break;
 
         default:
@@ -316,7 +208,7 @@ typedef enum : NSUInteger {
 #pragma mark - ImageCellDelegate
 - (void)imageCell:(ImageCell *)imageCell mediaObjectRequiresReload:(MediaId *)mediaId {
     __weak typeof(self) wSelf = self;
-    [[Model sharedInstance] requestMediaById:mediaId success:^(id<MediaObject> mediaObject) {
+    [[Operations sharedInstance] requestMediaById:mediaId success:^(id<MediaObject> mediaObject) {
         __strong typeof(self) sSelf = wSelf;
         if (sSelf) {
             [sSelf updateModelMediaObject:mediaObject reload:NO];
