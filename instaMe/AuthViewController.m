@@ -91,7 +91,6 @@
     [self.webView setHidden:NO];
     [self.errorView setHidden:YES];
 
-
     NSString *authString = [NSString stringWithFormat:@"%@?scope=%@&client_id=%@&redirect_uri=%@&response_type=%@", self.oauthUrl, self.scopes, self.clientId, self.redirectUrl, self.responseType];
     NSURL *authUrl = [NSURL URLWithString:authString];
     NSURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:authUrl];
@@ -102,7 +101,6 @@
 - (void)presentUnauthorizedWithError:(NSString *)error {
     [self.errorView setHidden:NO];
     [self.webView setHidden:YES];
-
 
     ErrorPresentation *errorPresentation = [self errorPresentationForError:error];
     [self.errorMessage setText:errorPresentation.errorMessage];
