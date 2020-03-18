@@ -8,16 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "Model.h"
+#import <FLAnimatedImage.h>
 
 @protocol ImagePresentationDelegate;
 
 @interface ImagePresentation : NSObject
 
 @property (strong, nonatomic) NSString *url;
-@property (strong, nonatomic) NSString *urlOrig;
+@property (strong, nonatomic) NSString *urlAnim;
 @property (assign, nonatomic) CGSize size;
 @property (strong, nonatomic) UIImage *image;
-@property (strong, nonatomic) UIImage *imageOrig;
+@property (strong, nonatomic) FLAnimatedImage *imageAnim;
 @property (strong, nonatomic) NSString *label;
 @property (strong, nonatomic) NSString *headerLabel;
 @property (weak, nonatomic) NSURLSessionDataTask *dataTask;
@@ -31,7 +32,9 @@
 - (instancetype)clone;
 
 - (bool)hasImage;
+- (bool)hasImageAnim;
 - (void)requestImage;
+- (void)requestImageAnim;
 - (void)abandonTasks;
 
 - (instancetype)initWithUrl:(NSString *)url size:(CGSize)size label:(NSString *)label;
@@ -42,6 +45,6 @@
 @end
 
 @protocol ImagePresentationDelegate <NSObject>
-- (void)imagePresentation:(ImagePresentation *)imagePresentation didRetrieveImage:(UIImage *)image;
+- (void)updatedImagePresentation:(ImagePresentation *)imagePresentation;
 @end
 

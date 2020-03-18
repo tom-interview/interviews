@@ -8,9 +8,11 @@
 
 #import "ImageDetailController.h"
 #import "ImagePresentation.h"
+#import <FLAnimatedImage.h>
+#import <FLAnimatedImageView.h>
 
 @interface ImageDetailController() <ImagePresentationDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet FLAnimatedImageView *imageView;
 
 @property (strong, nonatomic) ImagePresentation *imagePresentation;
 @end
@@ -23,7 +25,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     [self.view setBackgroundColor:[UIColor colorWithWhite:.6 alpha:1]];
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -34,16 +36,38 @@
         [_imagePresentation requestImage];
     }
     
+    if (![_imagePresentation hasImageAnim])
+    {
+        [_imagePresentation requestImageAnim];
+    }
+        
     [self updatePresentation];
 }
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
 - (void)updatePresentation {
-    UIImage *image;
-    if ((image = self.imagePresentation.image)) {
+    if (self.imagePresentation.imageAnim)
+    {
+        [self.imageView setAnimatedImage:self.imagePresentation.imageAnim];
+    }
+    else if (self.imagePresentation.image)
+    {
         [self.imageView setImage:self.imagePresentation.image];
     }
 }
 
-- (void)imagePresentation:(ImagePresentation *)imagePresentation didRetrieveImage:(UIImage *)image {
+- (void)updatedImagePresentation:(ImagePresentation *)imagePresentation {
     [self updatePresentation];
+    
+    if (![_imagePresentation hasImageAnim])
+    {
+        [_imagePresentation requestImageAnim];
+    }
 }
 @end

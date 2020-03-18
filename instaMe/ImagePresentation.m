@@ -45,10 +45,10 @@
 }
 + (instancetype)imagePresentationWithImageMediaObject:(ImageMediaObject *)imageMediaObject {
 
-    CGSize size = CGSizeMake(imageMediaObject.images.downsized.width, imageMediaObject.images.downsized.height);
-    ImagePresentation *presentation = [self imagePresentationWithUrl:imageMediaObject.images.downsized.url size:size label:imageMediaObject.title];
+    CGSize size = CGSizeMake(imageMediaObject.images.downsized_still.width, imageMediaObject.images.downsized_still.height);
+    ImagePresentation *presentation = [self imagePresentationWithUrl:imageMediaObject.images.downsized_still.url size:size label:imageMediaObject.title];
     [presentation setHeaderLabel:imageMediaObject.imageId];
-    [presentation setUrlOrig:imageMediaObject.images.original.url];
+    [presentation setUrlAnim:imageMediaObject.images.downsized.url];
     [presentation setMediaObject:imageMediaObject];
 
     return presentation;
@@ -56,7 +56,10 @@
 
 + (instancetype)clonePresentation:(ImagePresentation *)presentation {
     ImagePresentation *clone = [self imagePresentationWithUrl:presentation.url size:presentation.size label:presentation.label];
+    [clone setHeaderLabel:presentation.headerLabel];
+    [clone setUrlAnim:presentation.urlAnim];
     [clone setImage:presentation.image];
+    [clone setImageAnim:presentation.imageAnim];
     [clone setMediaObject:presentation.mediaObject];
     return clone;
 }
@@ -67,18 +70,44 @@
 - (bool)hasImage {
     return self.image != nil;
 }
+- (bool)hasImageAnim {
+    return self.imageAnim != nil;
+}
 - (void)requestImage {
     if (!self.image && !self.dataTask && self.url) {
+        __weak typeof(self) wSelf = self;
         self.dataTask = [[Transceiver sharedInstance] retrieveImageAtUrl:self.url success:^(NSData * _Nullable imageData) {
+            __strong typeof(self) sSelf = wSelf;
             UIImage *image;
             if (imageData && (image = [UIImage imageWithData:imageData])) {
-                [self setImage:image];
-                [self.delegate imagePresentation:self didRetrieveImage:image];
+                [sSelf setImage:image];
+                [sSelf.delegate updatedImagePresentation:sSelf];
             }
             else {
                 // FIXME handle error
             }
         } failure:nil]; // FIXME handle error
+    }
+}
+- (void)requestImageAnim {
+    if (!self.imageAnim && self.urlAnim) {
+        __weak typeof(self) wSelf = self;
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+            __strong typeof(self) sSelf = wSelf;
+            NSURL *url;
+            FLAnimatedImage *image;
+            if ((url = [NSURL URLWithString:sSelf.urlAnim])
+                && (image = [FLAnimatedImage animatedImageWithGIFData:[NSData dataWithContentsOfURL:url]])) {
+                [sSelf setImageAnim:image];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [sSelf.delegate updatedImagePresentation:sSelf];
+                });
+            }
+            else {
+                // FIXME handle error
+            }
+        });
     }
 }
 - (void)abandonTasks {

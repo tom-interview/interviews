@@ -37,6 +37,7 @@
 - (void)updatePresentation {
     [self.imageLabel setText:self.imagePresentation.label];
     [self.imageHeaderLabel setText:self.imagePresentation.headerLabel];
+    
     [self.imageView setImage:self.imagePresentation.image];
 
     UIColor *tintColor = ([self.imagePresentation isLiked] ? [UIColor colorWithRed:.8 green:0 blue:0 alpha:.6] : [UIColor colorWithWhite:1 alpha:.6]);
@@ -47,7 +48,7 @@
     [self.likeLabel setText:[self.imagePresentation likeLabel]];
     [self.likeBacker setBackgroundColor:[self.likeLabel.text length] ? [buttonColor colorWithAlphaComponent:1] : [UIColor clearColor]];
 }
-- (void)imagePresentation:(ImagePresentation *)imagePresentation didRetrieveImage:(UIImage *)image {
+- (void)updatedImagePresentation:(ImagePresentation *)imagePresentation {
     [self updatePresentation];
 }
 
