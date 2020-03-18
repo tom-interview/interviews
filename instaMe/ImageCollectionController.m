@@ -203,8 +203,8 @@ typedef enum : NSUInteger {
 - (void)updatePresentation {
     BOOL isLoading = (self.dataTask && !(self.dataTask.state == NSURLSessionTaskStateCompleted));
     [self setTitle:(isLoading ? @"Loading..."
-                    : self.mode == MediaMode_Recent ? @"Recent"
-                    : self.mode == MediaMode_Nearby ? @"Nearby"
+                    : self.mode == MediaMode_Recent ? @"Trending" // FIXME get from string table
+                    : self.mode == MediaMode_Nearby ? @"Coronavirus"
                     : nil)];
 
     [self.modeButton setImage:[UIImage imageNamed:(self.mode == MediaMode_Recent ? @"compass" : @"clock")]];
