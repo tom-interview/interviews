@@ -92,10 +92,7 @@
 + (JSONKeyMapper *)keyMapper
 {
     NSDictionary *keyMap = @{
-                             @"thumbnailImage": @"images.thumbnail",
-                             @"standardImage": @"images.low_resolution",
-                             @"likeCount": @"likes.count",
-                             @"userHasLiked": @"user_has_liked",
+                             @"imageId": @"id"
                              };
     return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:keyMap];
 }
