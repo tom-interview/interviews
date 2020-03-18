@@ -60,7 +60,6 @@
     dispatch_once(&onceToken, ^{
         sharedInstance = [[self alloc] init];
         [sharedInstance setToken:[[State sharedInstance] accessToken]];
-
     });
 
     return sharedInstance;
@@ -129,7 +128,7 @@
         @throw NSInvalidArgumentException;
     }
 
-    NSString *urlString = [NSString stringWithFormat:@"https://api.giphy.com%@", endpoint];
+    NSString *urlString = [NSString stringWithFormat:@"http://api.giphy.com%@", endpoint];
 
     NSURLComponents *urlComponents = [NSURLComponents componentsWithString:urlString];
     NSMutableArray *queryItems = [NSMutableArray array];
