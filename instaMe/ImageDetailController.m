@@ -29,6 +29,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
+    if (![_imagePresentation hasImage])
+    {
+        [_imagePresentation requestImage];
+    }
+    
     [self updatePresentation];
 }
 - (void)updatePresentation {
