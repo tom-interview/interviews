@@ -40,10 +40,16 @@
 @property (nonatomic) CGFloat height;
 @end
 
+@interface Mp4Object : JSONModel
+@property (nonatomic) NSString *mp4;
+@end
+
 @interface ImagesObject : JSONModel
 @property (nonatomic) ImageObject *downsized; // 2MB
+@property (nonatomic) ImageObject *downsized_still;
 @property (nonatomic) ImageObject *downsized_large; // 8MB
 @property (nonatomic) ImageObject *original;
+@property (nonatomic) Mp4Object *looping;
 @end
 
 

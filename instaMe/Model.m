@@ -102,6 +102,9 @@
 @implementation ImageObject
 @end
 
+@implementation Mp4Object
+@end
+
 @implementation ImagesObject
 @end
 
