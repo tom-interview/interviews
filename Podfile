@@ -8,6 +8,7 @@ target 'instaMe' do
   pod 'SAMKeychain'
   pod 'JSONModel'
   pod 'CHTCollectionViewWaterfallLayout'
+  pod 'FLAnimatedImage'
 
   target 'instaMeTests' do
     inherit! :search_paths
