@@ -29,6 +29,8 @@
 - (NSString *)likeLabel; // nil if 0 or single digit or + if > 9 
 
 - (instancetype)clone;
+
+- (bool)hasImage;
 - (void)requestImage;
 - (void)abandonImage; // FIXME rename
 

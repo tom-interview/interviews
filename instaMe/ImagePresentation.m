@@ -64,6 +64,9 @@
     return [self.class clonePresentation:self];
 }
 
+- (bool)hasImage {
+    return self.image != nil;
+}
 - (void)requestImage {
     if (!self.image && !self.dataTask && self.url) {
         self.dataTask = [[Transceiver sharedInstance] retrieveImageAtUrl:self.url success:^(NSData * _Nullable imageData) {
