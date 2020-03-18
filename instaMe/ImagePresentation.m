@@ -81,7 +81,7 @@
         } failure:nil]; // FIXME handle error
     }
 }
-- (void)abandonImage { // FIXME rename
+- (void)abandonTasks {
     [self.dataTask cancel];
     [self setDataTask:nil];
 }

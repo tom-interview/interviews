@@ -32,7 +32,7 @@
 
 - (bool)hasImage;
 - (void)requestImage;
-- (void)abandonImage; // FIXME rename
+- (void)abandonTasks;
 
 - (instancetype)initWithUrl:(NSString *)url size:(CGSize)size label:(NSString *)label;
 + (instancetype)imagePresentationWithUrl:(NSString *)url size:(CGSize)size label:(NSString *)label;

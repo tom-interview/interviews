@@ -131,7 +131,7 @@ typedef enum : NSUInteger {
 - (void)updateModelWithMediaObjects:(NSArray <id<MediaObject>> *)mediaObjects {
 
     for (ImagePresentation *p in self.model) {
-        [p abandonImage];
+        [p abandonTasks];
     }
 
     NSMutableArray *model = [NSMutableArray array];

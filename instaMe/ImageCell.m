@@ -16,7 +16,7 @@
 }
 - (void)setImagePresentation:(ImagePresentation *)imagePresentation {
     [_imagePresentation setDelegate:nil];
-    [_imagePresentation abandonImage];
+    [_imagePresentation abandonTasks];
 
     _imagePresentation = imagePresentation;
 
