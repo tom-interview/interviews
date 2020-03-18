@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Transceiver.h"
 
 @interface AppDelegate ()
 @end
@@ -16,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    [[Transceiver sharedInstance] setKey:@"hPZGRXFTxALgeadQwSTUIZ0oNRcLmrXB"];
+    
     [self customizeAppearance];
 
     return YES;

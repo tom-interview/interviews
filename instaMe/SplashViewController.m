@@ -29,9 +29,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    // HACK sidestep auth controller for now
-    [[Transceiver sharedInstance] setKey:@"hPZGRXFTxALgeadQwSTUIZ0oNRcLmrXB"];
-
     [self.promptView setHidden:[Transceiver.sharedInstance isAuthenticated]];
 }
 - (void)viewDidAppear:(BOOL)animated {
