@@ -268,12 +268,12 @@
 
 #pragma mark - logging
 - (void)logRequest:(NSURLSessionTask *)task {
-    NSLog(@">>>> request %d; method: %@; url: %@", (int)task.taskIdentifier, task.originalRequest.HTTPMethod, task.originalRequest.URL.absoluteString);
+    NSLog(@"-->> request %d; method: %@; url: %@", (int)task.taskIdentifier, task.originalRequest.HTTPMethod, task.originalRequest.URL.absoluteString);
 }
 - (void)logResponse:(NSURLResponse *)response data:(NSData *)data error:(NSError *)error {
     NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSString *truncatedString = ([responseString length] > 200 ? [[responseString substringToIndex:200] stringByAppendingString:@"..."] : responseString);
-    NSLog(@"<<<< response url: %@; error: %@\njson: %@", response.URL.absoluteString, error, truncatedString);
+    NSLog(@"<<-- response url: %@; error: %@\njson: %@", response.URL.absoluteString, error, truncatedString);
 }
 
 @end
