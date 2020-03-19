@@ -225,47 +225,6 @@
 }
 
 
-#pragma mark - Like/Unlike requests
-- (NSURLSessionTask *)likeMediaById:(MediaId *)mediaId success:(void (^)(void))success failure:(void (^)(NSError * _Nullable))failure {
-    NSString *endpoint = [NSString stringWithFormat:@"/media/%@/likes", mediaId.objectId];
-    NSMutableURLRequest *request = [self requestWithEndpoint:endpoint queryParams:nil];
-    [request setHTTPMethod:@"POST"];
-    
-    return [self performRequest:request success:^{
-        if (success) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                success();
-            });
-        }
-    } failure:^(NSError * _Nullable error) {
-        if (failure) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                failure(error);
-            });
-        }
-    }];
-}
-- (NSURLSessionTask *)unlikeMediaById:(MediaId *)mediaId success:(void (^)(void))success failure:(void (^)(NSError * _Nullable))failure {
-    NSString *endpoint = [NSString stringWithFormat:@"/media/%@/likes", mediaId.objectId];
-    NSMutableURLRequest *request = [self requestWithEndpoint:endpoint queryParams:nil];
-    [request setHTTPMethod:@"DELETE"];
-
-    return [self performRequest:request success:^{
-        if (success) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                success();
-            });
-        }
-    } failure:^(NSError * _Nullable error) {
-        if (failure) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                failure(error);
-            });
-        }
-    }];
-}
-
-
 #pragma mark - logging
 - (void)logRequest:(NSURLSessionTask *)task {
     NSLog(@"-->> request %d; method: %@; url: %@", (int)task.taskIdentifier, task.originalRequest.HTTPMethod, task.originalRequest.URL.absoluteString);

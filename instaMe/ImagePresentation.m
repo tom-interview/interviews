@@ -16,17 +16,6 @@
 
 @implementation ImagePresentation
 
-- (BOOL)isLiked {
-    return false; //(self.transientLiked ? [self.transientLiked boolValue] : [self.mediaObject isLikedByUser]);
-}
-- (void)setLiked:(BOOL)liked {
-    [self setTransientLiked:[NSNumber numberWithBool:liked]];
-}
-- (NSString *)likeLabel {
-    NSInteger likeCount = 0; //[self.mediaObject likeCount];
-    NSString *likeLabel = (likeCount <= 0 ? nil : likeCount > 10 ? @"+" : [NSNumber numberWithInteger:likeCount].stringValue);
-    return likeLabel;
-}
 - (void)setMediaObject:(id<MediaObject>)mediaObject {
     _mediaObject = mediaObject;
     [self setTransientLiked:nil];

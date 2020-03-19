@@ -15,12 +15,6 @@
 #import "Operations.h"
 #import "Transceiver.h"
 
-
-#pragma mark - ImageCell
-
-
-
-
 typedef enum : NSUInteger {
     MediaMode_Recent,
     MediaMode_Nearby,

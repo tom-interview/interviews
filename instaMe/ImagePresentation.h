@@ -25,9 +25,6 @@
 @property (weak, nonatomic) id<ImagePresentationDelegate> delegate;
 @property (strong, nonatomic) id<MediaObject> mediaObject;
 
-- (BOOL)isLiked;
-- (void)setLiked:(BOOL)liked;
-- (NSString *)likeLabel; // nil if 0 or single digit or + if > 9 
 
 - (instancetype)clone;
 

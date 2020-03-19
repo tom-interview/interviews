@@ -31,7 +31,5 @@ typedef enum : NSUInteger {
 
 - (nonnull NSURLSessionDataTask *)retrieveImageAtUrl:(nonnull NSString *)url success:(void (^_Nonnull)(NSData * _Nullable))success failure:(void (^_Nullable)(NSError * _Nullable error))failure;
 
-- (nonnull NSURLSessionTask *)likeMediaById:(nonnull MediaId *)mediaId success:(void (^_Nonnull)(void))success failure:(void (^_Nullable)(NSError * _Nullable error))failure;
-- (nonnull NSURLSessionTask *)unlikeMediaById:(nonnull MediaId *)mediaId success:(void (^_Nonnull)(void))success failure:(void (^_Nullable)(NSError * _Nullable error))failure;
 
 @end
