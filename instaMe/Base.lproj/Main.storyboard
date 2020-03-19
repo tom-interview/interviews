@@ -193,7 +193,7 @@ photo stream.</string>
             <objects>
                 <collectionViewController id="To0-JQ-CjY" customClass="ImageCollectionController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="sIR-e0-gr0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mf4-1A-2GX">
                             <size key="itemSize" width="100" height="100"/>
@@ -287,6 +287,7 @@ photo stream.</string>
                             <outlet property="delegate" destination="To0-JQ-CjY" id="iBw-c4-0Lb"/>
                         </connections>
                     </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="W8j-Iu-JdO"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFq-Js-MO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
