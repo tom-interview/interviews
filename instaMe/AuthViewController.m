@@ -125,7 +125,6 @@
             NSString *token;
             if ([parts count] > 1 && (token = [parts lastObject])) {
                 NSLog(@"token: %@", token);
-                [[Transceiver sharedInstance] setToken:token];
                 [self dismissViewControllerAnimated:YES completion:nil];
             }
             else {
@@ -136,7 +135,6 @@
             for (NSURLQueryItem *item in urlComponents.queryItems) {
                 if ([item.name isEqualToString:@"error"]) {
                     NSLog(@"error: %@", item.value); // FIXME handle error better
-                    [[Transceiver sharedInstance] setToken:nil];
                     [self presentUnauthorizedWithError:item.value];
                 }
             }

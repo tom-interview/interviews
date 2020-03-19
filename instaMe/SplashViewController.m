@@ -28,15 +28,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    [self.promptView setHidden:[Transceiver.sharedInstance isAuthenticated]];
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
-    if ([Transceiver.sharedInstance isAuthenticated]) {
-        [self performSegueWithIdentifier:@"PresentImages" sender:self];
-    }
 }
 
 - (IBAction)tappedAuthButton:(UIButton *)b {

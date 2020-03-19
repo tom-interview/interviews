@@ -159,9 +159,7 @@ typedef enum : NSUInteger {
     void (^failure)(NSError *) = ^void(NSError *error) {
         __strong typeof(self) sSelf = wSelf;
         if (sSelf) {
-            if ([error.domain isEqualToString:TransceiverErrorDomain] && error.code == TransceiverErrorCode_AuthRequired) {
-                [sSelf dismissViewControllerAnimated:YES completion:nil];
-            }
+            // FIXME update UI with error
         }
     };
 
@@ -189,10 +187,6 @@ typedef enum : NSUInteger {
 #pragma mark - UI callbacks
 - (void)tappedModeButton:(UIBarButtonItem *)b {
     [self updateModelWithMode:(self.mode == MediaMode_Recent ? MediaMode_Nearby : MediaMode_Recent)]; // FIXME needs more smarts when modes > 2
-}
-- (void)tappedLogoutButton:(UIBarButtonItem *)b {
-    [[Transceiver sharedInstance] setToken:nil];
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)pulledRefreshControl:(UIRefreshControl *)r {
     [self updateModelWithMode:self.mode];
