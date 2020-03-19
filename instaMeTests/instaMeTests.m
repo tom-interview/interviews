@@ -10,7 +10,7 @@
 #import "Transceiver.h"
 #import "Operations.h"
 
-@interface StubMediaSource : NSObject<MediaSource>
+@interface StubMediaSource : NSObject<MediaDataSource>
 @end
 
 @implementation StubMediaSource
@@ -45,7 +45,7 @@
 @end
 
 @interface instaMeTests : XCTestCase
-@property (strong, nonatomic) id<MediaSource> mediaSource;
+@property (strong, nonatomic) id<MediaDataSource> mediaSource;
 @property (strong, nonatomic) Operations *operations;
 @end
 

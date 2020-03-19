@@ -17,7 +17,7 @@ typedef enum : NSUInteger {
     TransceiverErrorCode_AuthRequired,
 } TransceiverErrorCode;
 
-@protocol MediaSource <NSObject>
+@protocol MediaDataSource <NSObject>
 
 - (nonnull NSURLSessionDataTask *)retrieveMediaTrendingWithSuccess:(void (^_Nonnull)(NSString * _Nullable jsonString))success failure:(void (^_Nullable)(NSError * _Nullable error))failure;
 - (nonnull NSURLSessionDataTask *)retrieveMediaWithQuery:(NSString * _Nonnull)query success:(void (^_Nonnull)(NSString * _Nullable jsonString))success failure:(void (^_Nullable)(NSError * _Nullable error))failure;
@@ -28,7 +28,7 @@ typedef enum : NSUInteger {
 @end
 
 
-@interface Transceiver : NSObject<MediaSource>
+@interface Transceiver : NSObject<MediaDataSource>
 
 - (void)setToken:(nullable NSString *)token;
 - (void)setKey:(nullable NSString *)key;

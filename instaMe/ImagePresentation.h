@@ -26,7 +26,7 @@
 @property (weak, nonatomic) id<ImagePresentationDelegate> delegate;
 @property (strong, nonatomic) id<MediaObject> mediaObject;
 
-- (void)injectMediaSource:(id<MediaSource>)mediaSource;
+- (void)injectMediaSource:(id<MediaDataSource>)mediaSource;
 - (instancetype)clone;
 
 - (bool)hasImage;

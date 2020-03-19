@@ -11,13 +11,13 @@
 #import "Transceiver.h"
 
 @interface ImagePresentation()
-@property (strong, nonatomic) id<MediaSource> mediaSource;
+@property (strong, nonatomic) id<MediaDataSource> mediaSource;
 @property (strong, nonatomic) NSNumber *transientLiked; // user has tapped like button; keep track of transient state until item refreshes
 @end
 
 @implementation ImagePresentation
 
-- (void)injectMediaSource:(id<MediaSource>)mediaSource
+- (void)injectMediaSource:(id<MediaDataSource>)mediaSource
 {
     [self setMediaSource:mediaSource];
 }

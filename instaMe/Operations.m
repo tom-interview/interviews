@@ -33,12 +33,12 @@
 
 #pragma mark - Operations
 @interface Operations()
-@property (strong, nonatomic) id<MediaSource> mediaSource;
+@property (strong, nonatomic) id<MediaDataSource> mediaSource;
 @end
 
 @implementation Operations
 
-- (instancetype)initWithMediaSource:(id<MediaSource>)mediaSource
+- (instancetype)initWithMediaSource:(id<MediaDataSource>)mediaSource
 {
     if ((self = [super init])){
         [self setMediaSource:mediaSource];
@@ -46,7 +46,7 @@
     return self;
 }
 
-- (id<MediaSource>)mediaSource
+- (id<MediaDataSource>)mediaSource
 {
     return _mediaSource;
 }
