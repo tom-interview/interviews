@@ -31,22 +31,28 @@
 @implementation MediaItemResponse
 @end
 
-
+#pragma mark - Operations
+@interface Operations()
+@property (strong, nonatomic) id<MediaSource> mediaSource;
+@end
 
 @implementation Operations
 
-+ (instancetype)sharedInstance {
-    static Operations *sharedInstance;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[self alloc] init];
-    });
+- (instancetype)initWithMediaSource:(id<MediaSource>)mediaSource
+{
+    if ((self = [super init])){
+        [self setMediaSource:mediaSource];
+    }
+    return self;
+}
 
-    return sharedInstance;
+- (id<MediaSource>)mediaSource
+{
+    return _mediaSource;
 }
 
 - (NSURLSessionDataTask *)requestRecentMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure { // FIXME pass a block to collapse common code (see below)
-    return [[Transceiver sharedInstance] retrieveMediaTrendingWithSuccess:^(NSString * _Nullable jsonString) {
+    return [self.mediaSource retrieveMediaTrendingWithSuccess:^(NSString * _Nullable jsonString) {
         [self handleMediaListResponseJsonString:jsonString success:success failure:failure];
     } failure:failure];
 }
@@ -54,12 +60,12 @@
 - (NSURLSessionDataTask *)requestNearbyMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure {
     // FIXME allow user to pass tag
     NSString *query = @"coronavirus";
-    return [[Transceiver sharedInstance] retrieveMediaWithQuery:query success:^(NSString * _Nullable jsonString) {
+    return [self.mediaSource retrieveMediaWithQuery:query success:^(NSString * _Nullable jsonString) {
         [self handleMediaListResponseJsonString:jsonString success:success failure:failure];
     } failure:failure];
 }
 - (NSURLSessionDataTask *)requestMediaById:(MediaId *)mediaId success:(void (^)(id<MediaObject>))success failure:(void (^)(NSError *))failure {
-    return [[Transceiver sharedInstance] retrieveMediaById:mediaId success:^(NSString * _Nullable jsonString) {
+    return [self.mediaSource retrieveMediaById:mediaId success:^(NSString * _Nullable jsonString) {
         [self handleMediaItemResponseJsonString:jsonString success:success failure:failure];
     } failure:failure];
 

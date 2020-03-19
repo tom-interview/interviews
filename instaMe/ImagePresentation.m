@@ -11,10 +11,16 @@
 #import "Transceiver.h"
 
 @interface ImagePresentation()
+@property (strong, nonatomic) id<MediaSource> mediaSource;
 @property (strong, nonatomic) NSNumber *transientLiked; // user has tapped like button; keep track of transient state until item refreshes
 @end
 
 @implementation ImagePresentation
+
+- (void)injectMediaSource:(id<MediaSource>)mediaSource
+{
+    [self setMediaSource:mediaSource];
+}
 
 - (void)setMediaObject:(id<MediaObject>)mediaObject {
     _mediaObject = mediaObject;
@@ -50,6 +56,7 @@
     [clone setImage:presentation.image];
     [clone setImageAnim:presentation.imageAnim];
     [clone setMediaObject:presentation.mediaObject];
+    [clone setMediaSource:presentation.mediaSource];
     return clone;
 }
 - (instancetype)clone {
@@ -65,7 +72,7 @@
 - (void)requestImage {
     if (!self.image && !self.dataTask && self.url) {
         __weak typeof(self) wSelf = self;
-        self.dataTask = [[Transceiver sharedInstance] retrieveImageAtUrl:self.url success:^(NSData * _Nullable imageData) {
+        self.dataTask = [self.mediaSource retrieveImageAtUrl:self.url success:^(NSData * _Nullable imageData) {
             __strong typeof(self) sSelf = wSelf;
             UIImage *image;
             if (imageData && (image = [UIImage imageWithData:imageData])) {

@@ -54,17 +54,6 @@
     [[State sharedInstance] setApiKey:key];
 }
 
-+ (instancetype)sharedInstance {
-    static Transceiver *sharedInstance;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[self alloc] init];
-        [sharedInstance setToken:[[State sharedInstance] accessToken]];
-    });
-
-    return sharedInstance;
-}
-
 - (NSURLSessionDataTask *)retrieveDataWithRequest:(NSURLRequest *)request success:(void (^)(NSData * _Nullable data))success failure:(void (^)(NSError * _Nullable error))failure {
     if (!request) @throw NSInvalidArgumentException;
 
@@ -83,22 +72,8 @@
             return;
         }
 
-        if (httpResponse.statusCode != 200) {
-            NSString *errorString;
-            ErrorResponse *errorResponse;
-            NSError *e;
-            if ([data length]
-                 && (errorString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding])
-                 && (errorResponse = [[ErrorResponse alloc] initWithString:errorString error:&e])
-                 && !e
-                 && [errorResponse.errorType isEqualToString:@"OAuthAccessTokenException"]) // FIXME this is a bit specific, but would broaden when more error types are supported
-            {
-                [[Transceiver sharedInstance] setToken:nil];
-                failure([NSError errorWithDomain:TransceiverErrorDomain code:TransceiverErrorCode_AuthRequired userInfo:@{NSLocalizedDescriptionKey: @"Authentication required"}]);
-            }
-            else {
-                failure([NSError errorWithDomain:TransceiverErrorDomain code:TransceiverErrorCode_Unk userInfo:@{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Expected status=200 (%d)", (int)httpResponse.statusCode]}]);
-            }
+        if (httpResponse.statusCode != 200) { // FIXME handle errors more carefully
+            failure([NSError errorWithDomain:TransceiverErrorDomain code:TransceiverErrorCode_Unk userInfo:@{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Expected status=200 (%d)", (int)httpResponse.statusCode]}]);
             return;
         }
 

@@ -17,13 +17,7 @@ typedef enum : NSUInteger {
     TransceiverErrorCode_AuthRequired,
 } TransceiverErrorCode;
 
-@interface Transceiver : NSObject
-
-- (void)setToken:(nullable NSString *)token;
-- (void)setKey:(nullable NSString *)key;
-- (BOOL)isAuthenticated;
-
-+ (nonnull instancetype)sharedInstance;
+@protocol MediaSource <NSObject>
 
 - (nonnull NSURLSessionDataTask *)retrieveMediaTrendingWithSuccess:(void (^_Nonnull)(NSString * _Nullable jsonString))success failure:(void (^_Nullable)(NSError * _Nullable error))failure;
 - (nonnull NSURLSessionDataTask *)retrieveMediaWithQuery:(NSString * _Nonnull)query success:(void (^_Nonnull)(NSString * _Nullable jsonString))success failure:(void (^_Nullable)(NSError * _Nullable error))failure;
@@ -31,5 +25,13 @@ typedef enum : NSUInteger {
 
 - (nonnull NSURLSessionDataTask *)retrieveImageAtUrl:(nonnull NSString *)url success:(void (^_Nonnull)(NSData * _Nullable))success failure:(void (^_Nullable)(NSError * _Nullable error))failure;
 
+@end
+
+
+@interface Transceiver : NSObject<MediaSource>
+
+- (void)setToken:(nullable NSString *)token;
+- (void)setKey:(nullable NSString *)key;
+- (BOOL)isAuthenticated;
 
 @end

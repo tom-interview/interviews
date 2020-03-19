@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Operations.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+- (Operations *)operations;
 
 @end
 

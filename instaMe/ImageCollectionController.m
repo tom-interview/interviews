@@ -14,6 +14,7 @@
 #import "Model.h"
 #import "Operations.h"
 #import "Transceiver.h"
+#import "AppDelegate.h"
 
 typedef enum : NSUInteger {
     MediaMode_Recent,
@@ -23,6 +24,7 @@ typedef enum : NSUInteger {
 #pragma mark - ImageCollectionController
 @interface ImageCollectionController() <UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout, ImageCellDelegate>
 
+@property (strong, nonatomic) Operations *ops;
 @property (assign, nonatomic) MediaMode mode;
 @property (strong, nonatomic) NSArray *model;
 @property (weak, nonatomic) NSURLSessionDataTask *dataTask;
@@ -34,17 +36,26 @@ typedef enum : NSUInteger {
 
 @implementation ImageCollectionController
 
+- (void)injectOperations:(Operations *)operations
+{
+    [self setOps:operations];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (!self.ops) {
+        id delegate = [[UIApplication sharedApplication] delegate];
+        AppDelegate *appDelegate;
+        if ([(appDelegate = (AppDelegate *)delegate) isKindOfClass:AppDelegate.class]){
+            [self setOps:appDelegate.operations];
+        }
+    }
 
     // Nav controller
     UIBarButtonItem *modeButton = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonItemStylePlain target:self action:@selector(tappedModeButton:)];
     [self.navigationItem setRightBarButtonItem:modeButton];
     [self setModeButton:modeButton];
-
-    UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemStop) target:self action:@selector(tappedLogoutButton:)];
-    [self.navigationItem setLeftBarButtonItem:logoutButton];
-
 
     // Collection controller
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
@@ -72,7 +83,9 @@ typedef enum : NSUInteger {
     if (indexPath.row < [self.model count]) {
         item = [self.model objectAtIndex:indexPath.row];
     }
-
+    
+    [item injectMediaSource:self.ops.mediaSource];
+    
     return item;
 }
 
@@ -132,12 +145,14 @@ typedef enum : NSUInteger {
 
     for (id<MediaObject> m in mediaObjects) {
         ImageMediaObject *image;
-        if ([(image = (ImageMediaObject *)m) isKindOfClass:[ImageMediaObject class]]) {
+        if ([(image = (ImageMediaObject *)m) isKindOfClass:[ImageMediaObject class]]
+            && [image.images.downsized_still.url length]) // GOTCHA sometimes bogus images in model
+        {
             [model addObject:[ImagePresentation imagePresentationWithImageMediaObject:image]];
         }
     }
 
-    // FIXME support dynamic updates
+    // FIXME support dynamic collection updates
 
     [self setModel:[model copy]];
     [self.collectionView reloadData];
@@ -167,11 +182,11 @@ typedef enum : NSUInteger {
 
     switch(mode) {
         case MediaMode_Recent:
-            dataTask = [[Operations sharedInstance] requestRecentMediaWithSuccess:success failure:failure];
+            dataTask = [self.ops requestRecentMediaWithSuccess:success failure:failure];
             break;
 
         case MediaMode_Nearby:
-            dataTask = [[Operations sharedInstance] requestNearbyMediaWithSuccess:success failure:failure];
+            dataTask = [self.ops requestNearbyMediaWithSuccess:success failure:failure];
             break;
 
         default:
@@ -181,6 +196,7 @@ typedef enum : NSUInteger {
 
     [self setDataTask:dataTask];
     [self setMode:mode];
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathWithIndex:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
     [self updatePresentation];
 }
 
@@ -196,7 +212,7 @@ typedef enum : NSUInteger {
 #pragma mark - ImageCellDelegate
 - (void)imageCell:(ImageCell *)imageCell mediaObjectRequiresReload:(MediaId *)mediaId {
     __weak typeof(self) wSelf = self;
-    [[Operations sharedInstance] requestMediaById:mediaId success:^(id<MediaObject> mediaObject) {
+    [wSelf.ops requestMediaById:mediaId success:^(id<MediaObject> mediaObject) {
         __strong typeof(self) sSelf = wSelf;
         if (sSelf) {
             [sSelf updateModelMediaObject:mediaObject reload:NO];

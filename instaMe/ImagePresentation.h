@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Model.h"
+#import "Transceiver.h"
 #import <FLAnimatedImage.h>
 
 @protocol ImagePresentationDelegate;
@@ -25,7 +26,7 @@
 @property (weak, nonatomic) id<ImagePresentationDelegate> delegate;
 @property (strong, nonatomic) id<MediaObject> mediaObject;
 
-
+- (void)injectMediaSource:(id<MediaSource>)mediaSource;
 - (instancetype)clone;
 
 - (bool)hasImage;

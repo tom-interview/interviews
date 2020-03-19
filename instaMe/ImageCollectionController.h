@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Operations.h"
 
 @interface ImageCollectionController : UICollectionViewController
-
+- (void)injectOperations:(Operations *)operations;
 
 @end

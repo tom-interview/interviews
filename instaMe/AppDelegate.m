@@ -8,16 +8,25 @@
 
 #import "AppDelegate.h"
 #import "Transceiver.h"
+#import "Operations.h"
+#import "ImageCollectionController.h"
 
 @interface AppDelegate ()
+@property (strong, nonatomic) Operations *ops;
 @end
 
 @implementation AppDelegate
 
+- (Operations *)operations
+{
+    return self.ops;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    [[Transceiver sharedInstance] setKey:@"hPZGRXFTxALgeadQwSTUIZ0oNRcLmrXB"];
+    id<MediaSource> ms = [[Transceiver alloc] init];
+    [(Transceiver *)ms setKey:@"hPZGRXFTxALgeadQwSTUIZ0oNRcLmrXB"];
+    [self setOps:[[Operations alloc] initWithMediaSource:ms]];
     
     [self customizeAppearance];
 
