@@ -4,12 +4,14 @@ PODS:
   - CHTCollectionViewWaterfallLayout/ObjC (0.9.5)
   - FLAnimatedImage (1.0.12)
   - JSONModel (1.7.0)
+  - OCMock (3.6)
   - SAMKeychain (1.5.2)
 
 DEPENDENCIES:
   - CHTCollectionViewWaterfallLayout
   - FLAnimatedImage
   - JSONModel
+  - OCMock
   - SAMKeychain
 
 SPEC REPOS:
@@ -17,14 +19,16 @@ SPEC REPOS:
     - CHTCollectionViewWaterfallLayout
     - FLAnimatedImage
     - JSONModel
+    - OCMock
     - SAMKeychain
 
 SPEC CHECKSUMS:
   CHTCollectionViewWaterfallLayout: 775ff73f48cfc13859b62d8bceb96e772e4a0318
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+  OCMock: 5ea90566be239f179ba766fd9fbae5885040b992
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
 
-PODFILE CHECKSUM: 0dcd6cfaa33721bd864611d45e2acd2c2aa4cb19
+PODFILE CHECKSUM: 24ef4220b0c36e4b3820bddf0b2c926afbdec18a
 
 COCOAPODS: 1.5.2

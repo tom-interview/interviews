@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "Operations.h"
+#import "ImagePresentation.h"
+
+typedef enum : NSUInteger {
+    MediaMode_Recent,
+    MediaMode_Nearby,
+} MediaMode;
 
 @interface ImageCollectionController : UICollectionViewController
 - (void)injectMediaObjectSource:(id<MediaObjectSource>)source;
+
+// exposed for testing
+- (NSArray<ImagePresentation *> *)inspectModel;
+- (void)updateModelWithMode:(MediaMode)mode;
 
 @end

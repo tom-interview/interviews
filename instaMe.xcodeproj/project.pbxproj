@@ -7,24 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		997B21DBA15D54BE70B9F312 /* libPods-instaMeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE664CA0F7E8C3905C41A9C /* libPods-instaMeUITests.a */; };
+		298180767576A8B61DF02460 /* libPods-instaMeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 074627A701659291905730E3 /* libPods-instaMeTests.a */; };
 		A32297D073E2CE766C9CACB5 /* libPods-instaMe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49660B6ECCFB5AEAF371D73F /* libPods-instaMe.a */; };
-		C6F72C5625E250F72DF7C6D5 /* libPods-instaMeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B8ACAF745FBDDB9521147D /* libPods-instaMeTests.a */; };
 		E2FB0F221DDE10E50046E2F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F211DDE10E50046E2F2 /* main.m */; };
 		E2FB0F251DDE10E50046E2F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F241DDE10E50046E2F2 /* AppDelegate.m */; };
 		E2FB0F281DDE10E50046E2F2 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F271DDE10E50046E2F2 /* SplashViewController.m */; };
 		E2FB0F2B1DDE10E50046E2F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F291DDE10E50046E2F2 /* Main.storyboard */; };
 		E2FB0F2D1DDE10E50046E2F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F2C1DDE10E50046E2F2 /* Assets.xcassets */; };
 		E2FB0F301DDE10E50046E2F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F2E1DDE10E50046E2F2 /* LaunchScreen.storyboard */; };
-		E2FB0F3B1DDE10E50046E2F2 /* instaMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F3A1DDE10E50046E2F2 /* instaMeTests.m */; };
-		E2FB0F461DDE10E50046E2F2 /* instaMeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F451DDE10E50046E2F2 /* instaMeUITests.m */; };
+		E2FB0F3B1DDE10E50046E2F2 /* OperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F3A1DDE10E50046E2F2 /* OperationsTests.m */; };
 		E2FB0F551DDE151B0046E2F2 /* ImageCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F541DDE151B0046E2F2 /* ImageCollectionController.m */; };
 		E2FB0F5A1DDE332F0046E2F2 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F591DDE332F0046E2F2 /* AuthViewController.m */; };
 		E2FB0F5D1DDE3B770046E2F2 /* Transceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F5C1DDE3B770046E2F2 /* Transceiver.m */; };
 		E2FB0F601DDE52680046E2F2 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F5F1DDE52680046E2F2 /* Model.m */; };
 		E2FB0F651DDE85490046E2F2 /* ImageDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F641DDE85490046E2F2 /* ImageDetailController.m */; };
 		E2FB0F681DDE85C00046E2F2 /* ImagePresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F671DDE85C00046E2F2 /* ImagePresentation.m */; };
-		E2FB0F6A1DDE910E0046E2F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2FB0F691DDE910E0046E2F2 /* CoreLocation.framework */; };
 		E2FB0F6E1DDF6A290046E2F2 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F6C1DDF6A290046E2F2 /* compass.png */; };
 		E2FB0F6F1DDF6A290046E2F2 /* compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F6D1DDF6A290046E2F2 /* compass@2x.png */; };
 		E2FB0F731DDF87010046E2F2 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F711DDF87010046E2F2 /* clock.png */; };
@@ -34,6 +31,10 @@
 		E2FB0F7B1DDFB1570046E2F2 /* like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F791DDFB1570046E2F2 /* like@2x.png */; };
 		E8BB70572421BFC600A029E6 /* Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BB70562421BFC600A029E6 /* Operations.m */; };
 		E8BB705A2421CE4400A029E6 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BB70592421CE4400A029E6 /* ImageCell.m */; };
+		E8BB705C242321A800A029E6 /* jsonTrending.json in Resources */ = {isa = PBXBuildFile; fileRef = E8BB705B242321A800A029E6 /* jsonTrending.json */; };
+		E8BB705F24232D8B00A029E6 /* StubMediaDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BB705E24232D8B00A029E6 /* StubMediaDataSource.m */; };
+		E8BB706124232E3E00A029E6 /* ImageCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BB706024232E3E00A029E6 /* ImageCollectionTests.m */; };
+		E8BB706424232E5600A029E6 /* StubMediaObjectSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BB706324232E5600A029E6 /* StubMediaObjectSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,23 +45,16 @@
 			remoteGlobalIDString = E2FB0F1C1DDE10E50046E2F2;
 			remoteInfo = instaMe;
 		};
-		E2FB0F421DDE10E50046E2F2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E2FB0F151DDE10E50046E2F2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E2FB0F1C1DDE10E50046E2F2;
-			remoteInfo = instaMe;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		35B8ACAF745FBDDB9521147D /* libPods-instaMeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instaMeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		074627A701659291905730E3 /* libPods-instaMeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instaMeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF4BD5980F2CB21BE6216C2 /* Pods-instaMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instaMeUITests/Pods-instaMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		49660B6ECCFB5AEAF371D73F /* libPods-instaMe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instaMe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E998CC7E3D38FE49E8E303 /* Pods-instaMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-instaMe/Pods-instaMe.release.xcconfig"; sourceTree = "<group>"; };
 		A0D15E4C1C6A769CDDFC1EBA /* Pods-instaMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instaMe/Pods-instaMe.debug.xcconfig"; sourceTree = "<group>"; };
-		ACE664CA0F7E8C3905C41A9C /* libPods-instaMeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instaMeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02FBD95F9A5B109B0AD6539 /* Pods-instaMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instaMeTests/Pods-instaMeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D53BAE893D03E237E8D7FD8B /* libPods-instaMeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instaMeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0FF5A4350E6BF362D378913 /* Pods-instaMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-instaMeTests/Pods-instaMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		E2FB0F1D1DDE10E50046E2F2 /* instaMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instaMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FB0F211DDE10E50046E2F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -73,11 +67,8 @@
 		E2FB0F2F1DDE10E50046E2F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2FB0F311DDE10E50046E2F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2FB0F361DDE10E50046E2F2 /* instaMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instaMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2FB0F3A1DDE10E50046E2F2 /* instaMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = instaMeTests.m; sourceTree = "<group>"; };
+		E2FB0F3A1DDE10E50046E2F2 /* OperationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OperationsTests.m; sourceTree = "<group>"; };
 		E2FB0F3C1DDE10E50046E2F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2FB0F411DDE10E50046E2F2 /* instaMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instaMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2FB0F451DDE10E50046E2F2 /* instaMeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = instaMeUITests.m; sourceTree = "<group>"; };
-		E2FB0F471DDE10E50046E2F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2FB0F531DDE151B0046E2F2 /* ImageCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionController.h; sourceTree = "<group>"; };
 		E2FB0F541DDE151B0046E2F2 /* ImageCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionController.m; sourceTree = "<group>"; };
 		E2FB0F581DDE332F0046E2F2 /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
@@ -103,6 +94,18 @@
 		E8BB70562421BFC600A029E6 /* Operations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Operations.m; sourceTree = "<group>"; };
 		E8BB70582421CE4400A029E6 /* ImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
 		E8BB70592421CE4400A029E6 /* ImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
+		E8BB705B242321A800A029E6 /* jsonTrending.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jsonTrending.json; sourceTree = "<group>"; };
+		E8BB705D24232D8B00A029E6 /* StubMediaDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StubMediaDataSource.h; sourceTree = "<group>"; };
+		E8BB705E24232D8B00A029E6 /* StubMediaDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StubMediaDataSource.m; sourceTree = "<group>"; };
+		E8BB706024232E3E00A029E6 /* ImageCollectionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionTests.m; sourceTree = "<group>"; };
+		E8BB706224232E5600A029E6 /* StubMediaObjectSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StubMediaObjectSource.h; sourceTree = "<group>"; };
+		E8BB706324232E5600A029E6 /* StubMediaObjectSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StubMediaObjectSource.m; sourceTree = "<group>"; };
+		E8BB706C242331FB00A029E6 /* libFLAnimatedImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFLAnimatedImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8BB706E2423324A00A029E6 /* libPods-instaMe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-instaMe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8BB7072242332D800A029E6 /* libFLAnimatedImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFLAnimatedImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8BB7076242332FD00A029E6 /* libCHTCollectionViewWaterfallLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCHTCollectionViewWaterfallLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8BB70782423331A00A029E6 /* libJSONModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libJSONModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8BB707B2423336E00A029E6 /* libSAMKeychain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSAMKeychain.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7FFA8073A66D1B55AA088D /* Pods-instaMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-instaMeUITests/Pods-instaMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +114,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2FB0F6A1DDE910E0046E2F2 /* CoreLocation.framework in Frameworks */,
 				A32297D073E2CE766C9CACB5 /* libPods-instaMe.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,15 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6F72C5625E250F72DF7C6D5 /* libPods-instaMeTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2FB0F3E1DDE10E50046E2F2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				997B21DBA15D54BE70B9F312 /* libPods-instaMeUITests.a in Frameworks */,
+				298180767576A8B61DF02460 /* libPods-instaMeTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,10 +132,16 @@
 		6B54F161EC7AE3802EF0F8DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E8BB707B2423336E00A029E6 /* libSAMKeychain.a */,
+				E8BB70782423331A00A029E6 /* libJSONModel.a */,
+				E8BB7076242332FD00A029E6 /* libCHTCollectionViewWaterfallLayout.a */,
+				E8BB7072242332D800A029E6 /* libFLAnimatedImage.a */,
+				E8BB706E2423324A00A029E6 /* libPods-instaMe.a */,
+				E8BB706C242331FB00A029E6 /* libFLAnimatedImage.a */,
 				E2FB0F691DDE910E0046E2F2 /* CoreLocation.framework */,
 				49660B6ECCFB5AEAF371D73F /* libPods-instaMe.a */,
-				35B8ACAF745FBDDB9521147D /* libPods-instaMeTests.a */,
-				ACE664CA0F7E8C3905C41A9C /* libPods-instaMeUITests.a */,
+				074627A701659291905730E3 /* libPods-instaMeTests.a */,
+				D53BAE893D03E237E8D7FD8B /* libPods-instaMeUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,7 +151,6 @@
 			children = (
 				E2FB0F1F1DDE10E50046E2F2 /* instaMe */,
 				E2FB0F391DDE10E50046E2F2 /* instaMeTests */,
-				E2FB0F441DDE10E50046E2F2 /* instaMeUITests */,
 				E2FB0F1E1DDE10E50046E2F2 /* Products */,
 				E2FB0F611DDE5CC50046E2F2 /* Vendor */,
 				F58E0A8D4E29693D07632FD3 /* Pods */,
@@ -164,7 +163,6 @@
 			children = (
 				E2FB0F1D1DDE10E50046E2F2 /* instaMe.app */,
 				E2FB0F361DDE10E50046E2F2 /* instaMeTests.xctest */,
-				E2FB0F411DDE10E50046E2F2 /* instaMeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,19 +213,16 @@
 		E2FB0F391DDE10E50046E2F2 /* instaMeTests */ = {
 			isa = PBXGroup;
 			children = (
-				E2FB0F3A1DDE10E50046E2F2 /* instaMeTests.m */,
+				E2FB0F3A1DDE10E50046E2F2 /* OperationsTests.m */,
+				E8BB706024232E3E00A029E6 /* ImageCollectionTests.m */,
 				E2FB0F3C1DDE10E50046E2F2 /* Info.plist */,
+				E8BB705D24232D8B00A029E6 /* StubMediaDataSource.h */,
+				E8BB705E24232D8B00A029E6 /* StubMediaDataSource.m */,
+				E8BB706224232E5600A029E6 /* StubMediaObjectSource.h */,
+				E8BB706324232E5600A029E6 /* StubMediaObjectSource.m */,
+				E8BB705B242321A800A029E6 /* jsonTrending.json */,
 			);
 			path = instaMeTests;
-			sourceTree = "<group>";
-		};
-		E2FB0F441DDE10E50046E2F2 /* instaMeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E2FB0F451DDE10E50046E2F2 /* instaMeUITests.m */,
-				E2FB0F471DDE10E50046E2F2 /* Info.plist */,
-			);
-			path = instaMeUITests;
 			sourceTree = "<group>";
 		};
 		E2FB0F611DDE5CC50046E2F2 /* Vendor */ = {
@@ -307,26 +302,6 @@
 			productReference = E2FB0F361DDE10E50046E2F2 /* instaMeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E2FB0F401DDE10E50046E2F2 /* instaMeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E2FB0F501DDE10E50046E2F2 /* Build configuration list for PBXNativeTarget "instaMeUITests" */;
-			buildPhases = (
-				ADCB8F72CCC50DF13ACF44E4 /* [CP] Check Pods Manifest.lock */,
-				C53B6EE7D1B1B51808373D04 /* 📦 Check Pods Manifest.lock */,
-				E2FB0F3D1DDE10E50046E2F2 /* Sources */,
-				E2FB0F3E1DDE10E50046E2F2 /* Frameworks */,
-				E2FB0F3F1DDE10E50046E2F2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E2FB0F431DDE10E50046E2F2 /* PBXTargetDependency */,
-			);
-			name = instaMeUITests;
-			productName = instaMeUITests;
-			productReference = E2FB0F411DDE10E50046E2F2 /* instaMeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -340,10 +315,6 @@
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					E2FB0F351DDE10E50046E2F2 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = E2FB0F1C1DDE10E50046E2F2;
-					};
-					E2FB0F401DDE10E50046E2F2 = {
 						CreatedOnToolsVersion = 7.3.1;
 						TestTargetID = E2FB0F1C1DDE10E50046E2F2;
 					};
@@ -364,7 +335,6 @@
 			targets = (
 				E2FB0F1C1DDE10E50046E2F2 /* instaMe */,
 				E2FB0F351DDE10E50046E2F2 /* instaMeTests */,
-				E2FB0F401DDE10E50046E2F2 /* instaMeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -390,13 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2FB0F3F1DDE10E50046E2F2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				E8BB705C242321A800A029E6 /* jsonTrending.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,24 +448,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		ADCB8F72CCC50DF13ACF44E4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-instaMeUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B49ECF9EF9CD6C4D73A36D10 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -518,21 +464,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C53B6EE7D1B1B51808373D04 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -561,15 +492,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2FB0F3B1DDE10E50046E2F2 /* instaMeTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2FB0F3D1DDE10E50046E2F2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E2FB0F461DDE10E50046E2F2 /* instaMeUITests.m in Sources */,
+				E8BB706424232E5600A029E6 /* StubMediaObjectSource.m in Sources */,
+				E8BB706124232E3E00A029E6 /* ImageCollectionTests.m in Sources */,
+				E2FB0F3B1DDE10E50046E2F2 /* OperationsTests.m in Sources */,
+				E8BB705F24232D8B00A029E6 /* StubMediaDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,11 +506,6 @@
 			isa = PBXTargetDependency;
 			target = E2FB0F1C1DDE10E50046E2F2 /* instaMe */;
 			targetProxy = E2FB0F371DDE10E50046E2F2 /* PBXContainerItemProxy */;
-		};
-		E2FB0F431DDE10E50046E2F2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E2FB0F1C1DDE10E50046E2F2 /* instaMe */;
-			targetProxy = E2FB0F421DDE10E50046E2F2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -762,30 +683,6 @@
 			};
 			name = Release;
 		};
-		E2FB0F511DDE10E50046E2F2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FF4BD5980F2CB21BE6216C2 /* Pods-instaMeUITests.debug.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = instaMeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tombroadbent.instaMeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = instaMe;
-			};
-			name = Debug;
-		};
-		E2FB0F521DDE10E50046E2F2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB7FFA8073A66D1B55AA088D /* Pods-instaMeUITests.release.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = instaMeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tombroadbent.instaMeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = instaMe;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -812,15 +709,6 @@
 			buildConfigurations = (
 				E2FB0F4E1DDE10E50046E2F2 /* Debug */,
 				E2FB0F4F1DDE10E50046E2F2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E2FB0F501DDE10E50046E2F2 /* Build configuration list for PBXNativeTarget "instaMeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E2FB0F511DDE10E50046E2F2 /* Debug */,
-				E2FB0F521DDE10E50046E2F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

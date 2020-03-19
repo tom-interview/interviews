@@ -16,17 +16,14 @@
 #import "Transceiver.h"
 #import "AppDelegate.h"
 
-typedef enum : NSUInteger {
-    MediaMode_Recent,
-    MediaMode_Nearby,
-} MediaMode;
+
 
 #pragma mark - ImageCollectionController
 @interface ImageCollectionController() <UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout, ImageCellDelegate>
 
 @property (strong, nonatomic) id<MediaObjectSource> mediaObjectSource;
 @property (assign, nonatomic) MediaMode mode;
-@property (strong, nonatomic) NSArray *model;
+@property (strong, nonatomic) NSArray<ImagePresentation *> *model;
 @property (weak, nonatomic) NSURLSessionDataTask *dataTask;
 
 @property (weak, nonatomic) UIBarButtonItem *modeButton;
@@ -39,6 +36,10 @@ typedef enum : NSUInteger {
 - (void)injectMediaObjectSource:(id<MediaObjectSource>)mediaObjectSource
 {
     [self setMediaObjectSource:mediaObjectSource];
+}
+- (NSArray<ImagePresentation *> *)inspectModel
+{
+    return self.model;
 }
 
 - (void)viewDidLoad {

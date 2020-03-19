@@ -10,14 +10,10 @@ target 'instaMe' do
   pod 'CHTCollectionViewWaterfallLayout'
   pod 'FLAnimatedImage'
 
+  # Pods for testing
   target 'instaMeTests' do
     inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'instaMeUITests' do
-    inherit! :search_paths
-    # Pods for testing
+    pod 'OCMock'
   end
 
 end
