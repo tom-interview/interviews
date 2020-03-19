@@ -37,7 +37,7 @@
 
 - (instancetype)initWithUrl:(NSString *)url size:(CGSize)size label:(NSString *)label;
 + (instancetype)imagePresentationWithUrl:(NSString *)url size:(CGSize)size label:(NSString *)label;
-+ (instancetype)imagePresentationWithImageMediaObject:(ImageMediaObject *)imageMediaObject;
++ (instancetype)imagePresentationWithMediaObject:(id<MediaObject>)mediaObject;
 + (instancetype)clonePresentation:(ImagePresentation *)presentation;
 
 @end

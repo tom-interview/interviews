@@ -24,7 +24,6 @@
 
 - (void)setMediaObject:(id<MediaObject>)mediaObject {
     _mediaObject = mediaObject;
-    [self setTransientLiked:nil];
 }
 
 - (instancetype)initWithUrl:(NSString *)url size:(CGSize)size label:(NSString *)label {
@@ -38,13 +37,12 @@
 + (instancetype)imagePresentationWithUrl:(NSString *)url size:(CGSize)size label:(NSString *)label {
     return [[self alloc] initWithUrl:url size:size label:label];
 }
-+ (instancetype)imagePresentationWithImageMediaObject:(ImageMediaObject *)imageMediaObject {
++ (instancetype)imagePresentationWithMediaObject:(id<MediaObject>)mediaObject {
 
-    CGSize size = CGSizeMake(imageMediaObject.images.downsized_still.width, imageMediaObject.images.downsized_still.height);
-    ImagePresentation *presentation = [self imagePresentationWithUrl:imageMediaObject.images.downsized_still.url size:size label:imageMediaObject.title];
-    [presentation setHeaderLabel:imageMediaObject.imageId];
-    [presentation setUrlAnim:imageMediaObject.images.downsized.url];
-    [presentation setMediaObject:imageMediaObject];
+    CGSize size = CGSizeMake(mediaObject.spacial.width, mediaObject.spacial.height);
+    ImagePresentation *presentation = [self imagePresentationWithUrl:mediaObject.spacial.url size:size label:mediaObject.title];
+    [presentation setUrlAnim:mediaObject.urlAnim	];
+    [presentation setMediaObject:mediaObject];
 
     return presentation;
 }

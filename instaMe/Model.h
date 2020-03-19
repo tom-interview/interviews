@@ -22,43 +22,36 @@
 @interface MediaId : _Id
 @end
 
+@protocol SpacialObject <NSObject>
+- (NSString *)url;
+- (CGFloat)width;
+- (CGFloat)height;
+@end
+
 @protocol MediaObject <NSObject>
 - (MediaId *)mediaId;
 - (NSString *)title;
+- (id<SpacialObject>)spacial;
+- (NSString *)urlAnim;
 @end
 
-
-@interface User : JSONModel
-@property (nonatomic) UserId <Ignore> *userId;
-@property (nonatomic) NSString *username;
-@property (nonatomic) NSString *fullname;
-@end
-
-
-@interface ImageObject : JSONModel
+@interface ImageObject : JSONModel<SpacialObject>
 @property (nonatomic) NSString *url;
 @property (nonatomic) CGFloat width;
 @property (nonatomic) CGFloat height;
 @end
 
-@interface Mp4Object : JSONModel
-@property (nonatomic) NSString *mp4;
-@end
 
 @interface ImagesObject : JSONModel
 @property (nonatomic) ImageObject *downsized; // 2MB
 @property (nonatomic) ImageObject *downsized_still;
 @property (nonatomic) ImageObject *downsized_large; // 8MB
 @property (nonatomic) ImageObject *original;
-@property (nonatomic) Mp4Object *looping;
 @end
 
 
 @interface ImageMediaObject : JSONModel <MediaObject>
 @property (nonatomic) MediaId <Ignore> *mediaId;
-//@property (nonatomic) User *user;
-//@property (nonatomic) NSInteger likeCount;
-//@property (nonatomic) BOOL userHasLiked;
 @property (nonatomic) NSString *imageId;
 @property (nonatomic) NSString *title;
 @property (nonatomic) ImagesObject *images;

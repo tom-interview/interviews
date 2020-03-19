@@ -144,11 +144,9 @@ typedef enum : NSUInteger {
     NSMutableArray *model = [NSMutableArray array];
 
     for (id<MediaObject> m in mediaObjects) {
-        ImageMediaObject *image;
-        if ([(image = (ImageMediaObject *)m) isKindOfClass:[ImageMediaObject class]]
-            && [image.images.downsized_still.url length]) // GOTCHA sometimes bogus images in model
+        if ([m.spacial.url length]) // GOTCHA sometimes bogus images in model
         {
-            [model addObject:[ImagePresentation imagePresentationWithImageMediaObject:image]];
+            [model addObject:[ImagePresentation imagePresentationWithMediaObject:m]];
         }
     }
 

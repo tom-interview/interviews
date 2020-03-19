@@ -50,43 +50,30 @@
 @end
 
 
-@interface User()
-@property (nonatomic) NSInteger id;
-@end
-
-@implementation User
-- (instancetype)initWithDictionary:(NSDictionary *)dict error:(NSError *__autoreleasing *)err {
-    if ((self = [super initWithDictionary:dict error:err])) {
-        [self setUserId:[[UserId alloc] initWithId:[NSNumber numberWithInteger:_id].stringValue]];
-    }
-    return self;
-}
-
-+ (JSONKeyMapper *)keyMapper
-{
-    NSDictionary *keyMap = @{
-                             @"fullname": @"full_name",
-                             };
-    return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:keyMap];
-}
-@end
-
-
 @interface ImageMediaObject()
 @property (nonatomic) NSInteger id;
 @end
 
 @implementation ImageMediaObject
 
-- (BOOL)isLikedByUser {
-    return false;
-}
-
 - (instancetype)initWithDictionary:(NSDictionary *)dict error:(NSError *__autoreleasing *)err {
     if ((self = [super initWithDictionary:dict error:err])) {
         [self setMediaId:[[MediaId alloc] initWithId:[NSNumber numberWithInteger:_id].stringValue]];
     }
     return self;
+}
+
+- (id<SpacialObject>)spacial
+{
+    return self.images.downsized_still.url
+        ? self.images.downsized_still
+        : nil;
+}
+- (NSString *)urlAnim
+{
+    return [self.images.downsized.url length]
+        ? self.images.downsized.url
+        : nil;
 }
 
 + (JSONKeyMapper *)keyMapper
@@ -100,9 +87,6 @@
 
 
 @implementation ImageObject
-@end
-
-@implementation Mp4Object
 @end
 
 @implementation ImagesObject
