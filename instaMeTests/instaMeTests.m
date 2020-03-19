@@ -7,26 +7,69 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "Transceiver.h"
+#import "Operations.h"
+
+@interface StubMediaSource : NSObject<MediaSource>
+@end
+
+@implementation StubMediaSource
+- (NSString *)trendingJson
+{
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString *path = [bundle pathForResource:@"jsonTrending" ofType:@"json"];
+    NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    return content;
+}
+
+- (nonnull NSURLSessionDataTask *)retrieveMediaTrendingWithSuccess:(void (^_Nonnull)(NSString * _Nullable jsonString))success failure:(void (^_Nullable)(NSError * _Nullable error))failure
+{
+    success([self trendingJson]);
+    return nil;
+}
+- (nonnull NSURLSessionDataTask *)retrieveMediaWithQuery:(NSString * _Nonnull)query success:(void (^_Nonnull)(NSString * _Nullable jsonString))success failure:(void (^_Nullable)(NSError * _Nullable error))failure
+{
+    return nil;
+}
+- (nonnull NSURLSessionDataTask *)retrieveMediaById:(nonnull MediaId *)mediaId success:(void (^_Nonnull)(NSString * _Nullable jsonString))success failure:(void (^_Nullable)(NSError * _Nullable error))failure
+{
+    return nil;
+}
+
+- (nonnull NSURLSessionDataTask *)retrieveImageAtUrl:(nonnull NSString *)url success:(void (^_Nonnull)(NSData * _Nullable))success failure:(void (^_Nullable)(NSError * _Nullable error))failure
+{
+    return nil;
+}
+
+
+@end
 
 @interface instaMeTests : XCTestCase
-
+@property (strong, nonatomic) id<MediaSource> mediaSource;
+@property (strong, nonatomic) Operations *operations;
 @end
 
 @implementation instaMeTests
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    [self setMediaSource:[[StubMediaSource alloc] init]];
+    
+    Operations *ops = [[Operations alloc] initWithMediaSource:self.mediaSource];
+    [self setOperations:ops];
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    [self.operations requestRecentMediaWithSuccess:^(NSArray<id<MediaObject>> * _Nonnull items) {
+        NSAssert([items count], @"received zero items");
+        XCTAssertNotNil([items.firstObject title]);
+    } failure:^(NSError * _Nonnull error) {
+        NSAssert(false, @"error requesting items");
+    }];
 }
 
 - (void)testPerformanceExample {

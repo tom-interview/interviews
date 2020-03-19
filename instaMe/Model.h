@@ -24,6 +24,7 @@
 
 @protocol MediaObject <NSObject>
 - (MediaId *)mediaId;
+- (NSString *)title;
 @end
 
 
