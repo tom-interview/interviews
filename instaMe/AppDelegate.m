@@ -26,7 +26,7 @@
 
     id<MediaDataSource> ms = [[Transceiver alloc] init];
     [(Transceiver *)ms setKey:@"hPZGRXFTxALgeadQwSTUIZ0oNRcLmrXB"];
-    [self setOps:[[Operations alloc] initWithMediaSource:ms]];
+    [self setOps:[[Operations alloc] initWithMediaDataSource:ms]];
     
     [self customizeAppearance];
 

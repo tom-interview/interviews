@@ -33,26 +33,26 @@
 
 #pragma mark - Operations
 @interface Operations()
-@property (strong, nonatomic) id<MediaDataSource> mediaSource;
+@property (strong, nonatomic) id<MediaDataSource> mediaDataSource;
 @end
 
 @implementation Operations
 
-- (instancetype)initWithMediaSource:(id<MediaDataSource>)mediaSource
+- (instancetype)initWithMediaDataSource:(id<MediaDataSource>)mediaDataSource
 {
     if ((self = [super init])){
-        [self setMediaSource:mediaSource];
+        [self setMediaDataSource:mediaDataSource];
     }
     return self;
 }
 
-- (id<MediaDataSource>)mediaSource
+- (id<MediaDataSource>)mediaDataSource
 {
-    return _mediaSource;
+    return _mediaDataSource;
 }
 
 - (NSURLSessionDataTask *)requestRecentMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure { // FIXME pass a block to collapse common code (see below)
-    return [self.mediaSource retrieveMediaTrendingWithSuccess:^(NSString * _Nullable jsonString) {
+    return [self.mediaDataSource retrieveMediaTrendingWithSuccess:^(NSString * _Nullable jsonString) {
         [self handleMediaListResponseJsonString:jsonString success:success failure:failure];
     } failure:failure];
 }
@@ -60,12 +60,12 @@
 - (NSURLSessionDataTask *)requestNearbyMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure {
     // FIXME allow user to pass tag
     NSString *query = @"coronavirus";
-    return [self.mediaSource retrieveMediaWithQuery:query success:^(NSString * _Nullable jsonString) {
+    return [self.mediaDataSource retrieveMediaWithQuery:query success:^(NSString * _Nullable jsonString) {
         [self handleMediaListResponseJsonString:jsonString success:success failure:failure];
     } failure:failure];
 }
 - (NSURLSessionDataTask *)requestMediaById:(MediaId *)mediaId success:(void (^)(id<MediaObject>))success failure:(void (^)(NSError *))failure {
-    return [self.mediaSource retrieveMediaById:mediaId success:^(NSString * _Nullable jsonString) {
+    return [self.mediaDataSource retrieveMediaById:mediaId success:^(NSString * _Nullable jsonString) {
         [self handleMediaItemResponseJsonString:jsonString success:success failure:failure];
     } failure:failure];
 

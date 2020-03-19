@@ -10,6 +10,6 @@
 #import "Operations.h"
 
 @interface ImageCollectionController : UICollectionViewController
-- (void)injectOperations:(Operations *)operations;
+- (void)injectMediaObjectSource:(id<MediaObjectSource>)source;
 
 @end

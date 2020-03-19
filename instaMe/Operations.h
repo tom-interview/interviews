@@ -12,16 +12,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Operations : NSObject
+@protocol MediaObjectSource <NSObject>
 
-- (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithMediaSource:(id<MediaDataSource>)mediaSource;
-
-- (id<MediaDataSource>)mediaSource;
+- (id<MediaDataSource>)mediaDataSource;
 
 - (NSURLSessionDataTask *)requestRecentMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure;
 - (NSURLSessionDataTask *)requestNearbyMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure;
 - (NSURLSessionDataTask *)requestMediaById:(MediaId *)mediaId success:(void(^)(id<MediaObject>))success failure:(void(^)(NSError *))failure;
+
+@end
+@interface Operations : NSObject<MediaObjectSource>
+
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithMediaDataSource:(id<MediaDataSource>)mediaDataSource;
 
 @end
 

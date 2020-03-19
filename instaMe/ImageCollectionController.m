@@ -24,7 +24,7 @@ typedef enum : NSUInteger {
 #pragma mark - ImageCollectionController
 @interface ImageCollectionController() <UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout, ImageCellDelegate>
 
-@property (strong, nonatomic) Operations *ops;
+@property (strong, nonatomic) id<MediaObjectSource> mediaObjectSource;
 @property (assign, nonatomic) MediaMode mode;
 @property (strong, nonatomic) NSArray *model;
 @property (weak, nonatomic) NSURLSessionDataTask *dataTask;
@@ -36,19 +36,19 @@ typedef enum : NSUInteger {
 
 @implementation ImageCollectionController
 
-- (void)injectOperations:(Operations *)operations
+- (void)injectMediaObjectSource:(id<MediaObjectSource>)mediaObjectSource
 {
-    [self setOps:operations];
+    [self setMediaObjectSource:mediaObjectSource];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (!self.ops) {
+    if (!self.mediaObjectSource) {
         id delegate = [[UIApplication sharedApplication] delegate];
         AppDelegate *appDelegate;
         if ([(appDelegate = (AppDelegate *)delegate) isKindOfClass:AppDelegate.class]){
-            [self setOps:appDelegate.operations];
+            [self setMediaObjectSource:appDelegate.operations];
         }
     }
 
@@ -84,7 +84,7 @@ typedef enum : NSUInteger {
         item = [self.model objectAtIndex:indexPath.row];
     }
     
-    [item injectMediaSource:self.ops.mediaSource];
+    [item injectMediaDataSource:self.mediaObjectSource.mediaDataSource];
     
     return item;
 }
@@ -180,11 +180,11 @@ typedef enum : NSUInteger {
 
     switch(mode) {
         case MediaMode_Recent:
-            dataTask = [self.ops requestRecentMediaWithSuccess:success failure:failure];
+            dataTask = [self.mediaObjectSource requestRecentMediaWithSuccess:success failure:failure];
             break;
 
         case MediaMode_Nearby:
-            dataTask = [self.ops requestNearbyMediaWithSuccess:success failure:failure];
+            dataTask = [self.mediaObjectSource requestNearbyMediaWithSuccess:success failure:failure];
             break;
 
         default:
@@ -210,7 +210,7 @@ typedef enum : NSUInteger {
 #pragma mark - ImageCellDelegate
 - (void)imageCell:(ImageCell *)imageCell mediaObjectRequiresReload:(MediaId *)mediaId {
     __weak typeof(self) wSelf = self;
-    [wSelf.ops requestMediaById:mediaId success:^(id<MediaObject> mediaObject) {
+    [wSelf.mediaObjectSource requestMediaById:mediaId success:^(id<MediaObject> mediaObject) {
         __strong typeof(self) sSelf = wSelf;
         if (sSelf) {
             [sSelf updateModelMediaObject:mediaObject reload:NO];
