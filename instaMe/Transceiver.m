@@ -120,7 +120,7 @@
 #pragma mark - Media requests
 - (NSURLSessionDataTask *)retrieveMediaTrendingWithSuccess:(void (^)(NSString * _Nullable))success failure:(void (^)(NSError * _Nullable))failure {
     NSDictionary  *queryParams = @{
-        @"limit": @"25",
+        @"limit": @"100", // FIXME expose
         @"rating": @"G"
     };
     
@@ -142,7 +142,8 @@
 - (NSURLSessionDataTask *)retrieveMediaWithQuery:(NSString *)query success:(void (^)(NSString * _Nullable))success failure:(void (^)(NSError * _Nullable))failure {
     NSDictionary *queryParams = @{
         @"q": query,
-        @"rating": @"G",
+        @"limit": @"100", // FIXME expose
+        @"rating": @"G"
     };
 
     NSMutableURLRequest *request = [self requestWithEndpoint:@"/v1/gifs/search" queryParams:queryParams];
