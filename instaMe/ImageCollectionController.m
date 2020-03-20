@@ -111,6 +111,7 @@
     if ([(detailController = (ImageDetailController *)segue.destinationViewController) isKindOfClass:[ImageDetailController class]]) {
         ImageCell *imageCell;
         if ([(imageCell = (ImageCell *)sender) isKindOfClass:[ImageCell class]]) {
+            [imageCell.imagePresentation requestImageAnim];
             [detailController setImagePresentation:imageCell.imagePresentation];
         }
     }

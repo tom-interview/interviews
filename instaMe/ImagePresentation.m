@@ -13,6 +13,7 @@
 @interface ImagePresentation()
 @property (strong, nonatomic) id<MediaDataSource> mediaDataSource;
 @property (weak, nonatomic) NSURLSessionDataTask *dataTask;
+@property (assign, nonatomic) bool fetchingAnim;
 @end
 
 @implementation ImagePresentation
@@ -47,6 +48,9 @@
     return presentation;
 }
 
+- (bool)isFetchingAnim {
+    return self.fetchingAnim;
+}
 - (bool)hasImage {
     return self.image != nil;
 }
@@ -56,7 +60,7 @@
 - (void)requestImage {
     if (!self.image && !self.dataTask && self.url) {
         __weak typeof(self) wSelf = self;
-        self.dataTask = [self.mediaDataSource retrieveImageAtUrl:self.url success:^(NSData * _Nullable imageData) {
+        wSelf.dataTask = [self.mediaDataSource retrieveImageAtUrl:self.url success:^(NSData * _Nullable imageData) {
             __strong typeof(self) sSelf = wSelf;
             UIImage *image;
             if (imageData && (image = [UIImage imageWithData:imageData])) {
@@ -70,7 +74,8 @@
     }
 }
 - (void)requestImageAnim {
-    if (!self.imageAnim && self.urlAnim) {
+    if (!self.imageAnim && !self.fetchingAnim && self.urlAnim) {
+        [self setFetchingAnim:true];
         __weak typeof(self) wSelf = self;
         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
             __strong typeof(self) sSelf = wSelf;
@@ -79,12 +84,14 @@
             if ((url = [NSURL URLWithString:sSelf.urlAnim])
                 && (image = [FLAnimatedImage animatedImageWithGIFData:[NSData dataWithContentsOfURL:url]])) {
                 [sSelf setImageAnim:image];
+                [sSelf setFetchingAnim:false];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [sSelf.delegate updatedImagePresentation:sSelf];
                 });
             }
             else {
+                [sSelf setFetchingAnim:false];
                 // FIXME handle error
             }
         });

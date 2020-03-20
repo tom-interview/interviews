@@ -13,6 +13,8 @@
 
 @interface ImageDetailController() <ImagePresentationDelegate>
 @property (weak, nonatomic) IBOutlet FLAnimatedImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UIView *spinnerBackgroundView;
 
 @property (strong, nonatomic) ImagePresentation *imagePresentation;
 @end
@@ -25,6 +27,10 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.spinner setHidesWhenStopped:true];
+    [self.spinnerBackgroundView.layer setCornerRadius:8];
+    [self.spinnerBackgroundView.layer setMasksToBounds:true];
     
     [self.view setBackgroundColor:[UIColor colorWithWhite:.6 alpha:1]];
 }
@@ -52,6 +58,14 @@
     [super viewWillDisappear:animated];
 }
 - (void)updatePresentation {
+    if ([self.imagePresentation isFetchingAnim]){
+        [self.spinner startAnimating];
+        [self.spinnerBackgroundView setHidden:false];
+    } else {
+        [self.spinner  stopAnimating];
+        [self.spinnerBackgroundView setHidden:true];
+    }
+    
     if (self.imagePresentation.imageAnim)
     {
         [self.imageView setAnimatedImage:self.imagePresentation.imageAnim];

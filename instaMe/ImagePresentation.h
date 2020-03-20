@@ -27,6 +27,7 @@
 
 - (void)injectMediaDataSource:(id<MediaDataSource>)mediaDataSource;
 
+- (bool)isFetchingAnim;
 - (bool)hasImage;
 - (bool)hasImageAnim;
 - (void)requestImage;
