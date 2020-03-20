@@ -57,9 +57,7 @@
     } failure:failure];
 }
 
-- (NSURLSessionDataTask *)requestSearchMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure {
-    // FIXME allow user to pass tag
-    NSString *query = @"coronavirus";
+- (NSURLSessionDataTask *)requestSearchMediaWithQuery:(NSString *)query success:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure {
     return [self.mediaDataSource retrieveMediaWithQuery:query success:^(NSString * _Nullable jsonString) {
         [self handleMediaListResponseJsonString:jsonString success:success failure:failure];
     } failure:failure];

@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithMediaDataSource:(id<MediaDataSource>)mediaDataSource;
 
 - (NSURLSessionDataTask *)requestTrendingMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure;
-- (NSURLSessionDataTask *)requestSearchMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure;
+- (NSURLSessionDataTask *)requestSearchMediaWithQuery:(NSString *)query success:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure;
 
 @end
 @interface GiphyObjectSource : NSObject<MediaObjectSource>

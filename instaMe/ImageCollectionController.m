@@ -23,6 +23,7 @@
 
 @property (strong, nonatomic) id<MediaObjectSource> mediaObjectSource;
 @property (assign, nonatomic) MediaMode mode;
+@property (strong, nonatomic) NSString *query;
 @property (strong, nonatomic) NSArray<ImagePresentation *> *model;
 @property (weak, nonatomic) NSURLSessionDataTask *dataTask;
 
@@ -32,6 +33,21 @@
 
 
 @implementation ImageCollectionController
+
+- (NSString *)randomQuery
+{
+    NSArray *queries = @[
+        @"Coronavirus",
+        @"TGIF",
+        @"Weekend",
+        @"Marvel",
+        @"Star Wars",
+        @"Pixar"
+    ];
+    
+    int i = arc4random() % [queries count];
+    return queries[i];
+}
 
 - (void)injectMediaObjectSource:(id<MediaObjectSource>)mediaObjectSource
 {
@@ -104,7 +120,7 @@
     BOOL isLoading = (self.dataTask && !(self.dataTask.state == NSURLSessionTaskStateCompleted));
     [self setTitle:(isLoading ? @"Loading..."
                     : self.mode == MediaMode_Trending ? @"Trending" // FIXME get from string table
-                    : self.mode == MediaMode_Search ? @"Coronavirus"
+                    : self.mode == MediaMode_Search ? self.query
                     : nil)];
 
     [self.modeButton setImage:[UIImage imageNamed:(self.mode == MediaMode_Trending ? @"compass" : @"clock")]];
@@ -158,13 +174,16 @@
 
     NSURLSessionDataTask *dataTask;
 
+    NSString *query = [self randomQuery];
+
     switch(mode) {
         case MediaMode_Trending:
             dataTask = [self.mediaObjectSource requestTrendingMediaWithSuccess:success failure:failure];
             break;
 
         case MediaMode_Search:
-            dataTask = [self.mediaObjectSource requestSearchMediaWithSuccess:success failure:failure];
+            [self setQuery:query];
+            dataTask = [self.mediaObjectSource requestSearchMediaWithQuery:query success:success failure:failure];
             break;
 
         default:

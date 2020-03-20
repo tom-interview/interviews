@@ -62,7 +62,7 @@
     return o ? o : self.object;
 }
 
-- (nonnull NSURLSessionDataTask *)requestSearchMediaWithSuccess:(nonnull void (^)(NSArray<id<MediaObject>> * _Nonnull))success failure:(nonnull void (^)(NSError * _Nonnull))failure {
+- (nonnull NSURLSessionDataTask *)requestSearchMediaWithQuery:(NSString *)query success:(nonnull void (^)(NSArray<id<MediaObject>> * _Nonnull))success failure:(nonnull void (^)(NSError * _Nonnull))failure {
     NSMutableArray *objs = [[NSMutableArray alloc] init];
 
     [objs addObject:[self getObject]];
