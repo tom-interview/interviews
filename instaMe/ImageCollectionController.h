@@ -11,8 +11,8 @@
 #import "ImagePresentation.h"
 
 typedef enum : NSUInteger {
-    MediaMode_Recent,
-    MediaMode_Nearby,
+    MediaMode_Trending,
+    MediaMode_Search,
 } MediaMode;
 
 @interface ImageCollectionController : UICollectionViewController

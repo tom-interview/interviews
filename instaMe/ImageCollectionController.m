@@ -74,7 +74,7 @@
 
     // Initial state
     self.model = @[];
-    [self updateModelWithMode:MediaMode_Nearby];
+    [self updateModelWithMode:MediaMode_Search];
     [self updatePresentation];
 }
 
@@ -103,11 +103,11 @@
 - (void)updatePresentation {
     BOOL isLoading = (self.dataTask && !(self.dataTask.state == NSURLSessionTaskStateCompleted));
     [self setTitle:(isLoading ? @"Loading..."
-                    : self.mode == MediaMode_Recent ? @"Trending" // FIXME get from string table
-                    : self.mode == MediaMode_Nearby ? @"Coronavirus"
+                    : self.mode == MediaMode_Trending ? @"Trending" // FIXME get from string table
+                    : self.mode == MediaMode_Search ? @"Coronavirus"
                     : nil)];
 
-    [self.modeButton setImage:[UIImage imageNamed:(self.mode == MediaMode_Recent ? @"compass" : @"clock")]];
+    [self.modeButton setImage:[UIImage imageNamed:(self.mode == MediaMode_Trending ? @"compass" : @"clock")]];
 }
 
 - (void)updateModelWithMediaObjects:(NSArray <id<MediaObject>> *)mediaObjects {
@@ -159,11 +159,11 @@
     NSURLSessionDataTask *dataTask;
 
     switch(mode) {
-        case MediaMode_Recent:
+        case MediaMode_Trending:
             dataTask = [self.mediaObjectSource requestTrendingMediaWithSuccess:success failure:failure];
             break;
 
-        case MediaMode_Nearby:
+        case MediaMode_Search:
             dataTask = [self.mediaObjectSource requestSearchMediaWithSuccess:success failure:failure];
             break;
 
@@ -179,7 +179,7 @@
 
 #pragma mark - UI callbacks
 - (void)tappedModeButton:(UIBarButtonItem *)b {
-    [self updateModelWithMode:(self.mode == MediaMode_Recent ? MediaMode_Nearby : MediaMode_Recent)]; // FIXME needs more smarts when modes > 2
+    [self updateModelWithMode:(self.mode == MediaMode_Trending ? MediaMode_Search : MediaMode_Trending)]; // FIXME needs more smarts when modes > 2
 }
 - (void)pulledRefreshControl:(UIRefreshControl *)r {
     [self updateModelWithMode:self.mode];

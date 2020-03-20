@@ -40,7 +40,7 @@
     id<MediaObjectSource> source = [[StubMediaObjectSource alloc] initWithUrl:self.stubUrl];
     [self.ic injectMediaObjectSource:source];
     
-    [self.ic updateModelWithMode:MediaMode_Nearby];
+    [self.ic updateModelWithMode:MediaMode_Search];
 
     NSArray<ImagePresentation *> *model = [self.ic inspectModel];
     XCTAssertNotNil(model);
@@ -56,7 +56,7 @@
     id<MediaObjectSource> source = [[StubMediaObjectSource alloc] initWithObject:obj];
     [self.ic injectMediaObjectSource:source];
     
-    [self.ic updateModelWithMode:MediaMode_Nearby];
+    [self.ic updateModelWithMode:MediaMode_Search];
 
     NSArray<ImagePresentation *> *model = [self.ic inspectModel];
     XCTAssertNotNil(model);
