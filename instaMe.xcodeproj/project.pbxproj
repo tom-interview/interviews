@@ -29,7 +29,7 @@
 		E2FB0F771DDFAB5E0046E2F2 /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F761DDFAB5E0046E2F2 /* State.m */; };
 		E2FB0F7A1DDFB1570046E2F2 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F781DDFB1570046E2F2 /* like.png */; };
 		E2FB0F7B1DDFB1570046E2F2 /* like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F791DDFB1570046E2F2 /* like@2x.png */; };
-		E8BB70572421BFC600A029E6 /* Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BB70562421BFC600A029E6 /* Operations.m */; };
+		E8BB70572421BFC600A029E6 /* GiphyObjectSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BB70562421BFC600A029E6 /* GiphyObjectSource.m */; };
 		E8BB705A2421CE4400A029E6 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BB70592421CE4400A029E6 /* ImageCell.m */; };
 		E8BB705C242321A800A029E6 /* jsonTrending.json in Resources */ = {isa = PBXBuildFile; fileRef = E8BB705B242321A800A029E6 /* jsonTrending.json */; };
 		E8BB705F24232D8B00A029E6 /* StubMediaDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BB705E24232D8B00A029E6 /* StubMediaDataSource.m */; };
@@ -90,8 +90,8 @@
 		E2FB0F761DDFAB5E0046E2F2 /* State.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = State.m; sourceTree = "<group>"; };
 		E2FB0F781DDFB1570046E2F2 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
 		E2FB0F791DDFB1570046E2F2 /* like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like@2x.png"; sourceTree = "<group>"; };
-		E8BB70552421BFC600A029E6 /* Operations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Operations.h; sourceTree = "<group>"; };
-		E8BB70562421BFC600A029E6 /* Operations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Operations.m; sourceTree = "<group>"; };
+		E8BB70552421BFC600A029E6 /* GiphyObjectSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GiphyObjectSource.h; sourceTree = "<group>"; };
+		E8BB70562421BFC600A029E6 /* GiphyObjectSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GiphyObjectSource.m; sourceTree = "<group>"; };
 		E8BB70582421CE4400A029E6 /* ImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
 		E8BB70592421CE4400A029E6 /* ImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
 		E8BB705B242321A800A029E6 /* jsonTrending.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jsonTrending.json; sourceTree = "<group>"; };
@@ -188,8 +188,8 @@
 				E2FB0F5C1DDE3B770046E2F2 /* GiphyDataSource.m */,
 				E2FB0F5E1DDE52680046E2F2 /* Model.h */,
 				E2FB0F5F1DDE52680046E2F2 /* Model.m */,
-				E8BB70552421BFC600A029E6 /* Operations.h */,
-				E8BB70562421BFC600A029E6 /* Operations.m */,
+				E8BB70552421BFC600A029E6 /* GiphyObjectSource.h */,
+				E8BB70562421BFC600A029E6 /* GiphyObjectSource.m */,
 				E2FB0F751DDFAB5E0046E2F2 /* State.h */,
 				E2FB0F761DDFAB5E0046E2F2 /* State.m */,
 				E2FB0F291DDE10E50046E2F2 /* Main.storyboard */,
@@ -481,7 +481,7 @@
 				E2FB0F681DDE85C00046E2F2 /* ImagePresentation.m in Sources */,
 				E2FB0F551DDE151B0046E2F2 /* ImageCollectionController.m in Sources */,
 				E2FB0F651DDE85490046E2F2 /* ImageDetailController.m in Sources */,
-				E8BB70572421BFC600A029E6 /* Operations.m in Sources */,
+				E8BB70572421BFC600A029E6 /* GiphyObjectSource.m in Sources */,
 				E2FB0F601DDE52680046E2F2 /* Model.m in Sources */,
 				E2FB0F251DDE10E50046E2F2 /* AppDelegate.m in Sources */,
 				E2FB0F221DDE10E50046E2F2 /* main.m in Sources */,

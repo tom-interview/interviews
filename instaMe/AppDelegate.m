@@ -8,25 +8,25 @@
 
 #import "AppDelegate.h"
 #import "GiphyDataSource.h"
-#import "Operations.h"
+#import "GiphyObjectSource.h"
 #import "ImageCollectionController.h"
 
 @interface AppDelegate ()
-@property (strong, nonatomic) Operations *ops;
+@property (strong, nonatomic) id<MediaObjectSource> source;
 @end
 
 @implementation AppDelegate
 
-- (Operations *)operations
+- (id<MediaObjectSource>)mediaObjectSource
 {
-    return self.ops;
+    return self.source;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     id<MediaDataSource> ms = [[GiphyDataSource alloc] init];
     [(GiphyDataSource *)ms setKey:@"hPZGRXFTxALgeadQwSTUIZ0oNRcLmrXB"];
-    [self setOps:[[Operations alloc] initWithMediaDataSource:ms]];
+    [self setSource:(id<MediaObjectSource>)[[GiphyObjectSource alloc] initWithMediaDataSource:ms]];
     
     [self customizeAppearance];
 

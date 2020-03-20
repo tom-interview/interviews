@@ -8,12 +8,12 @@
 
 #import <XCTest/XCTest.h>
 #import "StubMediaDataSource.h"
-#import "Operations.h"
+#import "GiphyObjectSource.h"
 
 
 @interface OperationsTests : XCTestCase
 @property (strong, nonatomic) id<MediaDataSource> mediaSource;
-@property (strong, nonatomic) Operations *operations;
+@property (strong, nonatomic) GiphyObjectSource *operations;
 @end
 
 @implementation OperationsTests
@@ -22,7 +22,7 @@
     [super setUp];
     [self setMediaSource:[[StubMediaDataSource alloc] init]];
     
-    Operations *ops = [[Operations alloc] initWithMediaDataSource:self.mediaSource];
+    GiphyObjectSource *ops = [[GiphyObjectSource alloc] initWithMediaDataSource:self.mediaSource];
     [self setOperations:ops];
 }
 

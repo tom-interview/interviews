@@ -12,7 +12,7 @@
 #import "ImageDetailController.h"
 #import "ImagePresentation.h"
 #import "Model.h"
-#import "Operations.h"
+#import "GiphyObjectSource.h"
 #import "GiphyDataSource.h"
 #import "AppDelegate.h"
 
@@ -49,7 +49,7 @@
         id delegate = [[UIApplication sharedApplication] delegate];
         AppDelegate *appDelegate;
         if ([(appDelegate = (AppDelegate *)delegate) isKindOfClass:AppDelegate.class]){
-            [self setMediaObjectSource:appDelegate.operations];
+            [self setMediaObjectSource:appDelegate.mediaObjectSource];
         }
     }
 

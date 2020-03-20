@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Operations.h"
+#import "GiphyObjectSource.h"
 #import "ImagePresentation.h"
 
 typedef enum : NSUInteger {

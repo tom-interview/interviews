@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Operations.h"
+#import "GiphyObjectSource.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

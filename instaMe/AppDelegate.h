@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Operations.h"
+#import "GiphyObjectSource.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-- (Operations *)operations;
+- (id<MediaObjectSource>)mediaObjectSource;
 
 @end
 

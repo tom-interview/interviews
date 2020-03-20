@@ -1,12 +1,12 @@
 //
-//  Operations.m
+//  GiphyObjectSource.m
 //  instaMe
 //
 //  Created by interview on 3/17/20.
 //  Copyright © 2020 Tom Broadbent. All rights reserved.
 //
 
-#import "Operations.h"
+#import "GiphyObjectSource.h"
 #import "GiphyDataSource.h"
 #import "Model.h"
 #import <JSONModel/JSONModel.h>
@@ -32,11 +32,11 @@
 @end
 
 #pragma mark - Operations
-@interface Operations()
+@interface GiphyObjectSource()
 @property (strong, nonatomic) id<MediaDataSource> mediaDataSource;
 @end
 
-@implementation Operations
+@implementation GiphyObjectSource
 
 - (instancetype)initWithMediaDataSource:(id<MediaDataSource>)mediaDataSource
 {
