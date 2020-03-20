@@ -135,12 +135,17 @@
 
     [self.dataTask cancel];
     [self setDataTask:nil];
+    
+    bool scrollToTop = self.mode != mode;
 
     __weak typeof(self) wSelf = self;
     void (^success)(NSArray<id<MediaObject>> *) = ^void(NSArray<id<MediaObject>> *media) {
         __strong typeof(self) sSelf = wSelf;
         if (sSelf) {
             [sSelf updateModelWithMediaObjects:media];
+            if (scrollToTop) {
+                [wSelf.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathWithIndex:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+            }
         }
     };
 
@@ -169,7 +174,6 @@
 
     [self setDataTask:dataTask];
     [self setMode:mode];
-    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathWithIndex:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
     [self updatePresentation];
 }
 
