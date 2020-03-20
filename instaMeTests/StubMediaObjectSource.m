@@ -82,8 +82,4 @@
     return nil;
 }
 
-- (nonnull NSURLSessionDataTask *)requestMediaById:(nonnull MediaId *)mediaId success:(nonnull void (^)(id<MediaObject> _Nonnull))success failure:(nonnull void (^)(NSError * _Nonnull))failure {
-    return nil;
-}
-
 @end
