@@ -31,7 +31,7 @@
 }
 
 - (void)testExample {
-    [self.operations requestRecentMediaWithSuccess:^(NSArray<id<MediaObject>> * _Nonnull items) {
+    [self.operations requestTrendingMediaWithSuccess:^(NSArray<id<MediaObject>> * _Nonnull items) {
         NSAssert([items count], @"received zero items");
         XCTAssertNotNil([items.firstObject title]);
     } failure:^(NSError * _Nonnull error) {

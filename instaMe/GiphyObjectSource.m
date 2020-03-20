@@ -51,13 +51,13 @@
     return _mediaDataSource;
 }
 
-- (NSURLSessionDataTask *)requestRecentMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure { // FIXME pass a block to collapse common code (see below)
+- (NSURLSessionDataTask *)requestTrendingMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure { // FIXME pass a block to collapse common code (see below)
     return [self.mediaDataSource retrieveMediaTrendingWithSuccess:^(NSString * _Nullable jsonString) {
         [self handleMediaListResponseJsonString:jsonString success:success failure:failure];
     } failure:failure];
 }
 
-- (NSURLSessionDataTask *)requestNearbyMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure {
+- (NSURLSessionDataTask *)requestSearchMediaWithSuccess:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure {
     // FIXME allow user to pass tag
     NSString *query = @"coronavirus";
     return [self.mediaDataSource retrieveMediaWithQuery:query success:^(NSString * _Nullable jsonString) {

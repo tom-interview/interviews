@@ -62,7 +62,7 @@
     return o ? o : self.object;
 }
 
-- (nonnull NSURLSessionDataTask *)requestNearbyMediaWithSuccess:(nonnull void (^)(NSArray<id<MediaObject>> * _Nonnull))success failure:(nonnull void (^)(NSError * _Nonnull))failure {
+- (nonnull NSURLSessionDataTask *)requestSearchMediaWithSuccess:(nonnull void (^)(NSArray<id<MediaObject>> * _Nonnull))success failure:(nonnull void (^)(NSError * _Nonnull))failure {
     NSMutableArray *objs = [[NSMutableArray alloc] init];
 
     [objs addObject:[self getObject]];
@@ -72,7 +72,7 @@
     return nil;
 }
 
-- (nonnull NSURLSessionDataTask *)requestRecentMediaWithSuccess:(nonnull void (^)(NSArray<id<MediaObject>> * _Nonnull))success failure:(nonnull void (^)(NSError * _Nonnull))failure {
+- (nonnull NSURLSessionDataTask *)requestTrendingMediaWithSuccess:(nonnull void (^)(NSArray<id<MediaObject>> * _Nonnull))success failure:(nonnull void (^)(NSError * _Nonnull))failure {
     NSMutableArray *objs = [[NSMutableArray alloc] init];
 
     [objs addObject:[self getObject]];

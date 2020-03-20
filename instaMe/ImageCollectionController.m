@@ -155,11 +155,11 @@
 
     switch(mode) {
         case MediaMode_Recent:
-            dataTask = [self.mediaObjectSource requestRecentMediaWithSuccess:success failure:failure];
+            dataTask = [self.mediaObjectSource requestTrendingMediaWithSuccess:success failure:failure];
             break;
 
         case MediaMode_Nearby:
-            dataTask = [self.mediaObjectSource requestNearbyMediaWithSuccess:success failure:failure];
+            dataTask = [self.mediaObjectSource requestSearchMediaWithSuccess:success failure:failure];
             break;
 
         default:
