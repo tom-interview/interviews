@@ -12,6 +12,7 @@
 
 @interface ImagePresentation()
 @property (strong, nonatomic) id<MediaDataSource> mediaDataSource;
+@property (weak, nonatomic) NSURLSessionDataTask *dataTask;
 @end
 
 @implementation ImagePresentation

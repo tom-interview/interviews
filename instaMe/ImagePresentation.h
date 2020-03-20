@@ -22,7 +22,6 @@
 @property (strong, nonatomic) FLAnimatedImage *imageAnim;
 @property (strong, nonatomic) NSString *label;
 @property (strong, nonatomic) NSString *headerLabel;
-@property (weak, nonatomic) NSURLSessionDataTask *dataTask;
 @property (weak, nonatomic) id<ImagePresentationDelegate> delegate;
 @property (strong, nonatomic) id<MediaObject> mediaObject;
 
