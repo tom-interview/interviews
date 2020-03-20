@@ -15,7 +15,7 @@
 		E2FB0F2B1DDE10E50046E2F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F291DDE10E50046E2F2 /* Main.storyboard */; };
 		E2FB0F2D1DDE10E50046E2F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F2C1DDE10E50046E2F2 /* Assets.xcassets */; };
 		E2FB0F301DDE10E50046E2F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2FB0F2E1DDE10E50046E2F2 /* LaunchScreen.storyboard */; };
-		E2FB0F3B1DDE10E50046E2F2 /* MediaObjectSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F3A1DDE10E50046E2F2 /* MediaObjectSourceTests.m */; };
+		E2FB0F3B1DDE10E50046E2F2 /* GiphyObjectSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F3A1DDE10E50046E2F2 /* GiphyObjectSourceTests.m */; };
 		E2FB0F551DDE151B0046E2F2 /* ImageCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F541DDE151B0046E2F2 /* ImageCollectionController.m */; };
 		E2FB0F5A1DDE332F0046E2F2 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F591DDE332F0046E2F2 /* AuthViewController.m */; };
 		E2FB0F5D1DDE3B770046E2F2 /* GiphyDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F5C1DDE3B770046E2F2 /* GiphyDataSource.m */; };
@@ -67,7 +67,7 @@
 		E2FB0F2F1DDE10E50046E2F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2FB0F311DDE10E50046E2F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2FB0F361DDE10E50046E2F2 /* instaMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instaMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2FB0F3A1DDE10E50046E2F2 /* MediaObjectSourceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaObjectSourceTests.m; sourceTree = "<group>"; };
+		E2FB0F3A1DDE10E50046E2F2 /* GiphyObjectSourceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GiphyObjectSourceTests.m; sourceTree = "<group>"; };
 		E2FB0F3C1DDE10E50046E2F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2FB0F531DDE151B0046E2F2 /* ImageCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionController.h; sourceTree = "<group>"; };
 		E2FB0F541DDE151B0046E2F2 /* ImageCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionController.m; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 		E2FB0F391DDE10E50046E2F2 /* instaMeTests */ = {
 			isa = PBXGroup;
 			children = (
-				E2FB0F3A1DDE10E50046E2F2 /* MediaObjectSourceTests.m */,
+				E2FB0F3A1DDE10E50046E2F2 /* GiphyObjectSourceTests.m */,
 				E8BB706024232E3E00A029E6 /* ImageCollectionTests.m */,
 				E2FB0F3C1DDE10E50046E2F2 /* Info.plist */,
 				E8BB705D24232D8B00A029E6 /* StubMediaDataSource.h */,
@@ -494,7 +494,7 @@
 			files = (
 				E8BB706424232E5600A029E6 /* StubMediaObjectSource.m in Sources */,
 				E8BB706124232E3E00A029E6 /* ImageCollectionTests.m in Sources */,
-				E2FB0F3B1DDE10E50046E2F2 /* MediaObjectSourceTests.m in Sources */,
+				E2FB0F3B1DDE10E50046E2F2 /* GiphyObjectSourceTests.m in Sources */,
 				E8BB705F24232D8B00A029E6 /* StubMediaDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
