@@ -11,27 +11,26 @@
 #import "GiphyObjectSource.h"
 
 
-@interface OperationsTests : XCTestCase
-@property (strong, nonatomic) id<MediaDataSource> mediaSource;
-@property (strong, nonatomic) GiphyObjectSource *operations;
+@interface MediaObjectSourceTests : XCTestCase
+@property (strong, nonatomic) GiphyObjectSource *mediaObjectSource;
 @end
 
-@implementation OperationsTests
+@implementation MediaObjectSourceTests
 
 - (void)setUp {
     [super setUp];
-    [self setMediaSource:[[StubMediaDataSource alloc] init]];
+    id<MediaDataSource> stubSource = [[StubMediaDataSource alloc] init];
     
-    GiphyObjectSource *ops = [[GiphyObjectSource alloc] initWithMediaDataSource:self.mediaSource];
-    [self setOperations:ops];
+    GiphyObjectSource *ops = [[GiphyObjectSource alloc] initWithMediaDataSource:stubSource];
+    [self setMediaObjectSource:ops];
 }
 
 - (void)tearDown {
     [super tearDown];
 }
 
-- (void)testExample {
-    [self.operations requestTrendingMediaWithSuccess:^(NSArray<id<MediaObject>> * _Nonnull items) {
+- (void)testMediaObjectSource_TrendingMediaParse_Success {
+    [self.mediaObjectSource requestTrendingMediaWithSuccess:^(NSArray<id<MediaObject>> * _Nonnull items) {
         NSAssert([items count], @"received zero items");
         XCTAssertNotNil([items.firstObject title]);
     } failure:^(NSError * _Nonnull error) {

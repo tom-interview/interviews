@@ -31,7 +31,7 @@
 @implementation MediaItemResponse
 @end
 
-#pragma mark - Operations
+
 @interface GiphyObjectSource()
 @property (strong, nonatomic) id<MediaDataSource> mediaDataSource;
 @end
