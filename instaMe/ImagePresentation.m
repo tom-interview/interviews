@@ -12,7 +12,6 @@
 
 @interface ImagePresentation()
 @property (strong, nonatomic) id<MediaDataSource> mediaDataSource;
-@property (strong, nonatomic) NSNumber *transientLiked; // user has tapped like button; keep track of transient state until item refreshes
 @end
 
 @implementation ImagePresentation
