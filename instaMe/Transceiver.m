@@ -161,25 +161,6 @@
         }
     }];
 }
-- (nonnull NSURLSessionDataTask *)retrieveMediaById:(nonnull MediaId *)mediaId success:(void (^_Nonnull)(NSString * _Nullable jsonString))success failure:(void (^_Nullable)(NSError * _Nullable error))failure {
-    if (!mediaId) @throw NSInvalidArgumentException;
-
-    NSString *endpoint = [NSString stringWithFormat:@"/media/%@", mediaId.objectId];
-    NSURLRequest *request = [self requestWithEndpoint:endpoint queryParams:nil];
-    return [self retrieveJsonWithRequest:request success:^(NSString * _Nullable jsonString) {
-        if (success) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                success(jsonString);
-            });
-        }
-    } failure:^(NSError * _Nullable error) {
-        if (failure) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                failure(error);
-            });
-        }
-    }];
-}
 
 #pragma mark - Image requests
 - (nonnull NSURLSessionDataTask *)retrieveImageAtUrl:(nonnull NSString *)url success:(void (^_Nonnull)(NSData * _Nullable))success failure:(void (^_Nullable)(NSError * _Nullable error))failure {

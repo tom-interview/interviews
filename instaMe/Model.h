@@ -10,18 +10,6 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <JSONModel/JSONModel.h>
 
-@interface _Id : NSObject
-@property (strong, nonatomic) NSString *objectId;
-- (instancetype)initWithId:(NSString *)id;
-+ (instancetype)idWithId:(NSString *)id;
-@end
-
-@interface UserId : _Id
-@end
-
-@interface MediaId : _Id
-@end
-
 @protocol SpacialObject <NSObject>
 - (NSString *)url;
 - (CGFloat)width;
@@ -29,11 +17,11 @@
 @end
 
 @protocol MediaObject <NSObject>
-- (MediaId *)mediaId;
 - (NSString *)title;
 - (id<SpacialObject>)spacial;
 - (NSString *)urlAnim;
 @end
+
 
 @interface ImageObject : JSONModel<SpacialObject>
 @property (nonatomic) NSString *url;
@@ -51,7 +39,6 @@
 
 
 @interface ImageMediaObject : JSONModel <MediaObject>
-@property (nonatomic) MediaId <Ignore> *mediaId;
 @property (nonatomic) NSString *imageId;
 @property (nonatomic) NSString *title;
 @property (nonatomic) ImagesObject *images;

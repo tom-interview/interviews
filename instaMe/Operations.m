@@ -64,12 +64,6 @@
         [self handleMediaListResponseJsonString:jsonString success:success failure:failure];
     } failure:failure];
 }
-- (NSURLSessionDataTask *)requestMediaById:(MediaId *)mediaId success:(void (^)(id<MediaObject>))success failure:(void (^)(NSError *))failure {
-    return [self.mediaDataSource retrieveMediaById:mediaId success:^(NSString * _Nullable jsonString) {
-        [self handleMediaItemResponseJsonString:jsonString success:success failure:failure];
-    } failure:failure];
-
-}
 - (void)handleMediaListResponseJsonString:(NSString *)jsonString success:(void(^)(NSArray<id<MediaObject>> *))success failure:(void(^)(NSError *))failure {
     MediaListResponse *mediaResponse;
     if ([(mediaResponse = (MediaListResponse *)[self parseMediaResponseJsonString:jsonString mediaResponseType:[MediaListResponse class] failure:failure]) isKindOfClass:[MediaListResponse class]]) {

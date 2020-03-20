@@ -35,7 +35,6 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @protocol ImageCellDelegate <NSObject>
-- (void)imageCell:(ImageCell *)imageCell mediaObjectRequiresReload:(MediaId *)mediaId;
 @end
 
 

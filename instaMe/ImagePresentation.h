@@ -27,7 +27,6 @@
 @property (strong, nonatomic) id<MediaObject> mediaObject;
 
 - (void)injectMediaDataSource:(id<MediaDataSource>)mediaDataSource;
-- (instancetype)clone;
 
 - (bool)hasImage;
 - (bool)hasImageAnim;
@@ -38,7 +37,6 @@
 - (instancetype)initWithUrl:(NSString *)url size:(CGSize)size label:(NSString *)label;
 + (instancetype)imagePresentationWithUrl:(NSString *)url size:(CGSize)size label:(NSString *)label;
 + (instancetype)imagePresentationWithMediaObject:(id<MediaObject>)mediaObject;
-+ (instancetype)clonePresentation:(ImagePresentation *)presentation;
 
 @end
 

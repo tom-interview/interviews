@@ -95,7 +95,7 @@
     if ([(detailController = (ImageDetailController *)segue.destinationViewController) isKindOfClass:[ImageDetailController class]]) {
         ImageCell *imageCell;
         if ([(imageCell = (ImageCell *)sender) isKindOfClass:[ImageCell class]]) {
-            [detailController setImagePresentation:[imageCell.imagePresentation clone]];
+            [detailController setImagePresentation:imageCell.imagePresentation];
         }
     }
 }
@@ -109,33 +109,7 @@
 
     [self.modeButton setImage:[UIImage imageNamed:(self.mode == MediaMode_Recent ? @"compass" : @"clock")]];
 }
-- (void)updateModelMediaObject:(id<MediaObject>)mediaObject reload:(BOOL)reload {
-    [self.model enumerateObjectsUsingBlock:^(ImagePresentation * _Nonnull p, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([[mediaObject mediaId] isEqual:[p.mediaObject mediaId]]) {
-            ImagePresentation *imagePresentation = [p clone];
-            [imagePresentation setMediaObject:mediaObject];
 
-            NSMutableArray *mutableModel = [self.model mutableCopy];
-            [mutableModel replaceObjectAtIndex:idx withObject:imagePresentation];
-            [self setModel:[mutableModel copy]];
-
-            NSIndexPath *indexPath = [NSIndexPath indexPathForItem:idx inSection:0]; // FIXME consider sections at some point..
-
-            ImageCell *imageCell;
-            if (!reload && [(imageCell = (ImageCell *)[self.collectionView cellForItemAtIndexPath:indexPath]) isKindOfClass:[ImageCell class]]) {
-                [imageCell setImagePresentation:imagePresentation];
-                [imageCell updatePresentation];
-            }
-            else if (reload) {
-                [self.collectionView performBatchUpdates:^{
-                    [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
-                } completion:nil];
-            }
-
-            *stop = YES;
-        }
-    }];
-}
 - (void)updateModelWithMediaObjects:(NSArray <id<MediaObject>> *)mediaObjects {
 
     for (ImagePresentation *p in self.model) {
@@ -209,17 +183,6 @@
 }
 
 #pragma mark - ImageCellDelegate
-- (void)imageCell:(ImageCell *)imageCell mediaObjectRequiresReload:(MediaId *)mediaId {
-    __weak typeof(self) wSelf = self;
-    [wSelf.mediaObjectSource requestMediaById:mediaId success:^(id<MediaObject> mediaObject) {
-        __strong typeof(self) sSelf = wSelf;
-        if (sSelf) {
-            [sSelf updateModelMediaObject:mediaObject reload:NO];
-        }
-    } failure:^(NSError *error) {
-        NSLog(@"unable to reload media object w/ error: %@", error); // FIXME error handling
-    }];
-}
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

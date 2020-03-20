@@ -47,20 +47,6 @@
     return presentation;
 }
 
-+ (instancetype)clonePresentation:(ImagePresentation *)presentation {
-    ImagePresentation *clone = [self imagePresentationWithUrl:presentation.url size:presentation.size label:presentation.label];
-    [clone setHeaderLabel:presentation.headerLabel];
-    [clone setUrlAnim:presentation.urlAnim];
-    [clone setImage:presentation.image];
-    [clone setImageAnim:presentation.imageAnim];
-    [clone setMediaObject:presentation.mediaObject];
-    [clone setMediaDataSource:presentation.mediaDataSource];
-    return clone;
-}
-- (instancetype)clone {
-    return [self.class clonePresentation:self];
-}
-
 - (bool)hasImage {
     return self.image != nil;
 }
