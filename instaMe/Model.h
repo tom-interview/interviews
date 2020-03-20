@@ -31,10 +31,10 @@
 
 
 @interface ImagesObject : JSONModel
-@property (nonatomic) ImageObject *downsized; // 2MB
-@property (nonatomic) ImageObject *downsized_still;
-@property (nonatomic) ImageObject *downsized_large; // 8MB
-@property (nonatomic) ImageObject *original;
+@property (nonatomic) ImageObject <Optional> *downsized; // 2MB
+@property (nonatomic) ImageObject <Optional> *downsized_still;
+@property (nonatomic) ImageObject <Optional> *downsized_large; // 8MB
+@property (nonatomic) ImageObject <Optional> *original;
 @end
 
 
