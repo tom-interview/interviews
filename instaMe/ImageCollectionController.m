@@ -13,7 +13,7 @@
 #import "ImagePresentation.h"
 #import "Model.h"
 #import "Operations.h"
-#import "Transceiver.h"
+#import "GiphyDataSource.h"
 #import "AppDelegate.h"
 
 

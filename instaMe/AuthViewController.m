@@ -7,7 +7,7 @@
 //
 
 #import "AuthViewController.h"
-#import "Transceiver.h"
+#import "GiphyDataSource.h"
 
 @interface ErrorPresentation : NSObject
 @property (strong, nonatomic) NSString *errorTitle;

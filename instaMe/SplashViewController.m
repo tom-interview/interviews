@@ -7,7 +7,7 @@
 //
 
 #import "SplashViewController.h"
-#import "Transceiver.h"
+#import "GiphyDataSource.h"
 
 @interface SplashViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *authButton;

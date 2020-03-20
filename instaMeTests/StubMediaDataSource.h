@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Transceiver.h"
+#import "GiphyDataSource.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

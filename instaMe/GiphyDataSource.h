@@ -1,5 +1,5 @@
 //
-//  Transceiver.h
+//  GiphyDataSource.h
 //  instaMe
 //
 //  Created by Tom Broadbent on 11/17/16.
@@ -27,10 +27,8 @@ typedef enum : NSUInteger {
 @end
 
 
-@interface Transceiver : NSObject<MediaDataSource>
+@interface GiphyDataSource : NSObject<MediaDataSource>
 
-- (void)setToken:(nullable NSString *)token;
 - (void)setKey:(nullable NSString *)key;
-- (BOOL)isAuthenticated;
 
 @end

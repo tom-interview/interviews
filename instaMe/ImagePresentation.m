@@ -8,7 +8,7 @@
 
 #import "ImagePresentation.h"
 #import "Model.h"
-#import "Transceiver.h"
+#import "GiphyDataSource.h"
 
 @interface ImagePresentation()
 @property (strong, nonatomic) id<MediaDataSource> mediaDataSource;

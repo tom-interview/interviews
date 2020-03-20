@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Model.h"
-#import "Transceiver.h"
+#import "GiphyDataSource.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

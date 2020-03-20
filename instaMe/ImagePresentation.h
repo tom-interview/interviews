@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Model.h"
-#import "Transceiver.h"
+#import "GiphyDataSource.h"
 #import <FLAnimatedImage.h>
 
 @protocol ImagePresentationDelegate;

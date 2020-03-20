@@ -7,7 +7,7 @@
 //
 
 #import "Operations.h"
-#import "Transceiver.h"
+#import "GiphyDataSource.h"
 #import "Model.h"
 #import <JSONModel/JSONModel.h>
 

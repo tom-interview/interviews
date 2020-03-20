@@ -7,7 +7,7 @@
 //
 
 #import "ImageCell.h"
-#import "Transceiver.h"
+#import "GiphyDataSource.h"
 
 @implementation ImageCell
 

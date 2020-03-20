@@ -18,7 +18,7 @@
 		E2FB0F3B1DDE10E50046E2F2 /* OperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F3A1DDE10E50046E2F2 /* OperationsTests.m */; };
 		E2FB0F551DDE151B0046E2F2 /* ImageCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F541DDE151B0046E2F2 /* ImageCollectionController.m */; };
 		E2FB0F5A1DDE332F0046E2F2 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F591DDE332F0046E2F2 /* AuthViewController.m */; };
-		E2FB0F5D1DDE3B770046E2F2 /* Transceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F5C1DDE3B770046E2F2 /* Transceiver.m */; };
+		E2FB0F5D1DDE3B770046E2F2 /* GiphyDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F5C1DDE3B770046E2F2 /* GiphyDataSource.m */; };
 		E2FB0F601DDE52680046E2F2 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F5F1DDE52680046E2F2 /* Model.m */; };
 		E2FB0F651DDE85490046E2F2 /* ImageDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F641DDE85490046E2F2 /* ImageDetailController.m */; };
 		E2FB0F681DDE85C00046E2F2 /* ImagePresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB0F671DDE85C00046E2F2 /* ImagePresentation.m */; };
@@ -73,8 +73,8 @@
 		E2FB0F541DDE151B0046E2F2 /* ImageCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionController.m; sourceTree = "<group>"; };
 		E2FB0F581DDE332F0046E2F2 /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
 		E2FB0F591DDE332F0046E2F2 /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
-		E2FB0F5B1DDE3B770046E2F2 /* Transceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transceiver.h; sourceTree = "<group>"; };
-		E2FB0F5C1DDE3B770046E2F2 /* Transceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transceiver.m; sourceTree = "<group>"; };
+		E2FB0F5B1DDE3B770046E2F2 /* GiphyDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiphyDataSource.h; sourceTree = "<group>"; };
+		E2FB0F5C1DDE3B770046E2F2 /* GiphyDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiphyDataSource.m; sourceTree = "<group>"; };
 		E2FB0F5E1DDE52680046E2F2 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		E2FB0F5F1DDE52680046E2F2 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		E2FB0F631DDE85490046E2F2 /* ImageDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDetailController.h; sourceTree = "<group>"; };
@@ -184,8 +184,8 @@
 				E2FB0F671DDE85C00046E2F2 /* ImagePresentation.m */,
 				E2FB0F631DDE85490046E2F2 /* ImageDetailController.h */,
 				E2FB0F641DDE85490046E2F2 /* ImageDetailController.m */,
-				E2FB0F5B1DDE3B770046E2F2 /* Transceiver.h */,
-				E2FB0F5C1DDE3B770046E2F2 /* Transceiver.m */,
+				E2FB0F5B1DDE3B770046E2F2 /* GiphyDataSource.h */,
+				E2FB0F5C1DDE3B770046E2F2 /* GiphyDataSource.m */,
 				E2FB0F5E1DDE52680046E2F2 /* Model.h */,
 				E2FB0F5F1DDE52680046E2F2 /* Model.m */,
 				E8BB70552421BFC600A029E6 /* Operations.h */,
@@ -477,7 +477,7 @@
 				E8BB705A2421CE4400A029E6 /* ImageCell.m in Sources */,
 				E2FB0F771DDFAB5E0046E2F2 /* State.m in Sources */,
 				E2FB0F5A1DDE332F0046E2F2 /* AuthViewController.m in Sources */,
-				E2FB0F5D1DDE3B770046E2F2 /* Transceiver.m in Sources */,
+				E2FB0F5D1DDE3B770046E2F2 /* GiphyDataSource.m in Sources */,
 				E2FB0F681DDE85C00046E2F2 /* ImagePresentation.m in Sources */,
 				E2FB0F551DDE151B0046E2F2 /* ImageCollectionController.m in Sources */,
 				E2FB0F651DDE85490046E2F2 /* ImageDetailController.m in Sources */,

@@ -1,12 +1,12 @@
 //
-//  Transceiver.m
+//  GiphyDataSource.m
 //  instaMe
 //
 //  Created by Tom Broadbent on 11/17/16.
 //  Copyright © 2016 Tom Broadbent. All rights reserved.
 //
 
-#import "Transceiver.h"
+#import "GiphyDataSource.h"
 #import "State.h"
 #import <JSONModel/JSONModel.h>
 
@@ -35,20 +35,13 @@
 
 /* extern */ NSString * const TransceiverErrorDomain = @"TransceiverErrorDomain";
 
-@interface Transceiver()
+@interface GiphyDataSource()
 @property (strong, nonatomic) NSString *token;
 @property (strong, nonatomic) NSString *key;
 @end
 
-@implementation Transceiver
+@implementation GiphyDataSource
 
-- (BOOL)isAuthenticated {
-    return ([self.token length] > 0 || [self.key length] > 0);
-}
-- (void)setToken:(NSString *)token {
-    _token = token;
-    [[State sharedInstance] setAccessToken:token];
-}
 - (void)setKey:(NSString *)key {
     _key = key;
     [[State sharedInstance] setApiKey:key];

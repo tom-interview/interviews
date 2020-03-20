@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "Transceiver.h"
+#import "GiphyDataSource.h"
 #import "Operations.h"
 #import "ImageCollectionController.h"
 
@@ -24,8 +24,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    id<MediaDataSource> ms = [[Transceiver alloc] init];
-    [(Transceiver *)ms setKey:@"hPZGRXFTxALgeadQwSTUIZ0oNRcLmrXB"];
+    id<MediaDataSource> ms = [[GiphyDataSource alloc] init];
+    [(GiphyDataSource *)ms setKey:@"hPZGRXFTxALgeadQwSTUIZ0oNRcLmrXB"];
     [self setOps:[[Operations alloc] initWithMediaDataSource:ms]];
     
     [self customizeAppearance];
